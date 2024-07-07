@@ -163,7 +163,7 @@ function Experience() {
                         >
                             <h3 className="vertical-timeline-element-title">Now</h3>
                             <p>
-                               besides my job i'm working on some projects to improve my skills and know more ways to deal with problems involving techs like db, etl, infra and code troubles, i've made many solutions(in many lang's like rust, c#, js, ts) and deployed them on amazon ec2, eds(postgres-db), google cloud vm's and digital ocean vm's, this gave me a lot about devops operations, you can contact mevto acess this servers for analisys.
+                               besides my job i'm working on some projects to improve my skills and know more ways to deal with problems involving techs like db, etl, infra and code troubles, i've made many solutions(in many lang's like rust, c#, js, ts) and deployed them on amazon ec2, eds(postgres-db), google cloud vm's and digital ocean vm's, this gave me a lot about devops operations, you can contact me to acess this servers for analisys.
                             </p>
                         </VerticalTimelineElement>
                     </VerticalTimeline>
