@@ -39,22 +39,22 @@ function Projects() {
     const linkVergz = 'https://portifolio-vergz2.vercel.app/'
     const linkThiago = 'https://adv-thiago-conde.vercel.app/'
 
-// Adiciona o ouvinte de eventos fora da função para evitar buscas repetidas no DOM
-const parallaxImages = document.querySelectorAll(".parallax-wrap img");
-document.addEventListener("mousemove", parallax);
+    // Adiciona o ouvinte de eventos fora da função para evitar buscas repetidas no DOM
+    const parallaxImages = document.querySelectorAll(".parallax-wrap img");
+    document.addEventListener("mousemove", parallax);
 
-function parallax(event) {
-    // Desestruturação para obter pageX e pageY do evento
-    const { pageX, pageY } = event;
+    function parallax(event) {
+        // Desestruturação para obter pageX e pageY do evento
+        const { pageX, pageY } = event;
 
-    parallaxImages.forEach((shift) => {
-        const position = shift.getAttribute("value");
-        const x = (window.innerWidth - pageX * position) / 200;
-        const y = (window.innerHeight - pageY * position) / 200;
+        parallaxImages.forEach((shift) => {
+            const position = shift.getAttribute("value");
+            const x = (window.innerWidth - pageX * position) / 200;
+            const y = (window.innerHeight - pageY * position) / 200;
 
-        shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
-    });
-}
+            shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        });
+    }
 
 
 
@@ -80,7 +80,7 @@ function parallax(event) {
                 <div class="parallax-wrap" data-aos="zoom-in" data-aos-duration="1000">
                     <img value="-15" src={bg5} />
                     <img value="5" src={bg2} />
-                    <img value="30" src={bg3} />       
+                    <img value="30" src={bg3} />
                     <img value="-5" src={bg4} />
                     <img value="15" src={bg1} />
                 </div>
@@ -159,6 +159,27 @@ function parallax(event) {
                 </div>
 
 
+
+                <div class="modal fade" id="modalProject" tabindex="-2" aria-labelledby="modalProjectLabel" aria-hidden="true">
+
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable .modal-xl ">
+
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close btn-close-white" id="closeCircuito" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class='modal-body p-1'>
+                                <div>
+                                    <iframe class='project-info-modal' src={description} title="description"></iframe>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
 
 
             </div>
