@@ -50,25 +50,126 @@ body, main{
       opacity: 1;
     }
   }
-
-  .fundo {
-    opacity: 0.5;
-    animation: bg-animation 10s infinite;
-    background-image: url('/img/sunset2.png');
-    background-size: cover;
-    position: absolute;
-    z-index: 0;
-    width: 100vw;
-    height: 100vh;
+  @keyframes dd1 {
+    0% {
+    }
+    50% {
+      width: 95vw;
+      height: 40vh;
+    }
   }
-  .fundo2 {
-    background-image: url('/img/sun1.png');
-    background-size: cover;
-    position: absolute;
+  @keyframes dd12 {
+    0% {
+    }
+    50% {
+      background-position: Calc(0vw - 80px) 50%;
+    }
+  }
+  @keyframes dd2 {
+    0% {
+    }
+    50% {
+      background-position: Calc(-10vw - 80px) 50%;
+    }
+  }
+  @keyframes dd3 {
+    0% {
+    }
+    50% {
+      background-position: Calc(-35vw - 80px) 50%;
+    }
+  }
+  @keyframes dd4 {
+    0% {
+    }
+    50% {
+      background-position: Calc(-70vw - 80px) 50%;
+    }
+  }
+  @keyframes dd5 {
+    0% {
+    }
+    50% {
+      width: 30vw;
+      height: 100vh;
+    }
+  }
+  .main {
+    background-image: url('/img/bg_home.jpg');
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
     z-index: 1;
-    width: 100vw;
-    height: 100vh;
+    background-color: rgb(0, 0, 0, 1);
   }
+  .d1 {
+    position: absolute;
+    background-image: url('/img/bg_home.jpg');
+    background-size: 2700px 1500px;
+  
+    height: 30vh;
+    width: 15vw;
+  
+    background-position: 0 50%;
+  
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    animation: dd1 10s infinite, dd12 10s infinite;
+  }
+  .d2 {
+    position: absolute;
+    background-image: url('/img/bg_home.jpg');
+    background-size: 2700px 1500px;
+  
+    height: 50vh;
+    width: 25vw;
+  
+    background-position: -10vw 50%;
+    left: 10vw;
+  
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: dd2 10s 2;
+    animation-delay: 4s;
+  }
+  .d3 {
+    position: absolute;
+    background-image: url('/img/bg_home.jpg');
+    background-size: 2700px 1500px;
+    overflow: hidden;
+  
+    height: 100vh;
+    width: 40vw;
+    left: 25vw;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+    background-position: -35vw 50%;
+  
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    animation: dd3 10s 2, dd5 10s infinite;
+  }
+  .d4 {
+    position: absolute;
+    overflow: hidden;
+    background-image: url('/img/bg_home.jpg');
+    background-size: 2700px 1500px;
+  
+    height: 80vh;
+    width: 25vw;
+    left: 60vw;
+    background-position: -70vw 50%;
+  
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: dd4 10s 2, dd5 10s infinite;
+  }
+  
+  
 
   .home-desktop {
 
@@ -81,6 +182,7 @@ body, main{
     align-items: center;
     position: relative;
     z-index: 2;
+    background-color: rgb(0, 0, 0, 0);
   }
 
   .container {
@@ -117,12 +219,8 @@ body, main{
     display: flex;
     justify-content: start;
     align-items: center;
+    background-color: rgb(0, 0, 0, 0);
 
-  }
-
-  .cube_intro{
-    
-    
   }
   .text-who {
     height: 200px;
@@ -139,6 +237,7 @@ body, main{
   }
   
   .images-intro {
+    background-color: rgb(0, 0, 0, 0);
     height: 90vh;
     width: 30vw;
     min-width: 470px;
@@ -200,10 +299,10 @@ body, main{
     min-height: 423px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: rgb(0, 0, 0, 0.7);
+    background-color: rgb(0, 0, 0, 0.3);
     border: 2px solid rgb(255, 94, 0);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
     width: 52vw;
     padding: 2vw;
     height: 80vh;
@@ -335,7 +434,7 @@ body, main{
     z-index: 1;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .home-mobile .title {

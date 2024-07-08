@@ -13,6 +13,7 @@ import Header from './layout/Header2/index.jsx';
 import Home from './pages/Home/Home'
 import Projects from './pages/Projects/Projects.jsx'
 import Experience from './pages/Experience/Experience.jsx'
+import Repos from './pages/Repos/Repos.jsx'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
+          <Route path="/repos" element={<Repos />} />
       </Routes>)}
   </HashRouter>
   )

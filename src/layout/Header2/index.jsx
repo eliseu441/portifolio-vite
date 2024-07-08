@@ -59,6 +59,14 @@ export default function Header({ variant }) {
                         Projects
                       </NavLink>
                     </li>
+                    <li>
+                      <NavLink
+                        to="repos"
+                        onClick={() => setMobileToggle(false)}
+                      >
+                        Repos
+                      </NavLink>
+                    </li>
                     
                     
                   </ul>
