@@ -10,7 +10,7 @@ function Repos() {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState(colunas);
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(5); // Defina quantos itens você quer por página
+    const [itemsPerPage, setItemsPerPage] = useState(5);
 
     useEffect(() => {
         const results = colunas.filter(row =>
@@ -42,6 +42,7 @@ function Repos() {
                     <div class='title col-sm-12 d-flex justify-content-center'>
                         <span  data-aos="fade-left" data-aos-duration="1000">REPOSITORIES</span>
                     </div>
+                    <p style={{fontWeight:'bolder'}} data-aos="fade-left" data-aos-duration="1000">pagina em construção... repositodios no github com seus respectivos nomes</p>
 
 
                     <div className='table-repos'>
