@@ -393,21 +393,6 @@ body{
 
     }
 
-    .information {
-
-        font-size: 3.3vh;
-        padding-top: 2px;
-        background: rgb(252, 246, 186);
-        background: linear-gradient(112.1deg, rgb(49, 91, 226) 11.4%, rgb(36, 50, 95) 70.2%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        cursor: pointer;
-    }
-
-    .information:hover {
-        transform: scale(2) !important;
-    }
-
     .slider-card .box {
         margin-left: 5px;
         width: 70vw;
