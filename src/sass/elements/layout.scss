@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Russo+One&display=swap';
 
 .cs-site_header {
     position: relative;
@@ -13,9 +13,9 @@
 }
 
 .cs-nav .cs-nav_list .active {
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     text-decoration: underline;
-    text-shadow: 3px 2px 3px rgba(255, 255, 255, 0.6);
+    text-shadow: 3px 2px 3px rgb(255 255 255 / 60%);
 
 }
 
@@ -54,7 +54,7 @@
 
 .cs-site_header.cs-style1.cs-sticky-active {
     background-color: white;
-    box-shadow: 0 10px 10px -10px rgba(33, 43, 53, 0.1);
+    box-shadow: 0 10px 10px -10px rgb(33 43 53 / 10%);
 }
 
 .cs-site_header.cs-style1 .cs-icon_btn {
@@ -65,9 +65,9 @@
     height: 45px;
     transition: all 0.3s ease;
     cursor: pointer;
-    border: 3px solid currentColor;
+    border: 3px solid currentcolor;
     border-radius: 50%;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
 }
 
 .cs-site_header.cs-style1 .cs-icon_btn .cs-icon_btn_in {
@@ -85,8 +85,7 @@
     position: absolute;
     height: 2.4px;
     width: 100%;
-    border-radius: 0;
-    background-color: currentColor;
+    background-color: currentcolor;
     color: inherit;
     vertical-align: top;
     transition: 0s ease-in-out;
@@ -167,7 +166,7 @@
     margin-left: 35px;
 }
 
-.cs-site_header_style1 .cs-nav .cs-nav_list>li.current-menu-item>a:before {
+.cs-site_header_style1 .cs-nav .cs-nav_list>li.current-menu-item>a::before {
     bottom: -4px;
     background-color: white;
 }
@@ -175,7 +174,7 @@
 .cs-side_header {
     position: fixed;
     top: 0;
-    right: 0px;
+    right: 0;
     width: 100%;
     z-index: 1000;
     height: 100vh;
@@ -185,7 +184,7 @@
 }
 
 .cs-side_header .cs-side_header_overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(0 0 0 / 50%);
     height: inherit;
     width: inherit;
     left: inherit;
@@ -203,7 +202,7 @@
     flex: none;
     margin-left: auto;
     overflow: auto;
-    padding: 90px 50px 50px 50px;
+    padding: 90px 50px 50px;
     position: relative;
     z-index: 2;
     right: -500px;
@@ -274,11 +273,10 @@
     height: 25px;
     width: 25px;
     border-radius: 50%;
-    border: 2px solid currentColor;
+    border: 2px solid currentcolor;
     background-color: transparent;
     color: #fff;
     cursor: pointer;
-    z-index: 2;
     z-index: 100;
 }
 
@@ -288,7 +286,7 @@
     position: absolute;
     width: 50%;
     height: 2px;
-    background-color: currentColor;
+    background-color: currentcolor;
     left: 50%;
     top: 50%;
     margin-left: -25%;
@@ -305,7 +303,7 @@
     transform: scale(1.05);
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (width <= 1199px) {
     .cs-main_header .container {
         max-width: 100%;
     }
@@ -323,7 +321,7 @@
 
 .cs-sticky_header {
     margin-top: -10px;
-    background-color: rgb(0, 0, 0, 0.3);
+    background-color: rgb(0 0 0 / 30%);
     position: fixed !important;
     width: 100%;
     z-index: 999;
@@ -331,11 +329,11 @@
 }
 
 .cs-sticky_header_active {
-    top: 0px;
+    top: 0;
     background-color: #000;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (width >= 900px) {
     .cs-main_header {
         position: relative;
     }
@@ -370,13 +368,11 @@
     }
 
     .cs-nav {
-
         font-family: 'Russo One', sans-serif;
         font-size: 30px !important;
         display: flex;
         align-items: center;
         height: 100%;
-        font-size: 15px;
         line-height: 1.6em;
         color: white;
     }
@@ -398,7 +394,7 @@
 
     .cs-nav .cs-nav_list>li>a {
         text-decoration: none;
-        color: #ff6600;
+        color: #f60;
         padding: 10px 0;
         display: inline-flex;
         position: relative;
@@ -432,14 +428,14 @@
         display: inline-block;
         height: 8px;
         width: 8px;
-        border: 2px solid currentColor;
+        border: 2px solid currentcolor;
         transform: rotate(45deg);
         border-left: 0;
         border-top: 0;
         margin-left: 6px;
         position: relative;
         top: -2px;
-        border-radius: 0px 0px 2px 0px;
+        border-radius: 0 0 2px;
     }
 
     .cs-nav .cs-nav_list li:not(.cs-mega-menu) {
@@ -448,8 +444,8 @@
 
 }
 
-@media screen and (max-width: 899px) {
-    /*Mobile Menu Button*/
+@media screen and (width <= 899px) {
+    /* Mobile Menu Button */
 
     @keyframes show-down-header {
         0% {
@@ -464,8 +460,8 @@
     .cs-nav .cs-nav_list {
         animation: show-down-header 1s;
         width: 100vw;
-        background-color: rgb(0, 0, 0, 0.4);
-        -webkit-backdrop-filter: blur(20px);
+        background-color: rgb(0 0 0 / 40%);
+        backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
         padding: 10px 0;
         display: none;
@@ -478,13 +474,11 @@
     }
 
     .cs-nav .cs-nav_list a {
-        color: #fff;
         text-decoration: none;
-
         font-family: "IBM Plex Sans", sans-serif;
         font-weight: 700;
         font-size: 2.5vh;
-        color: #ffffff;
+        color: #fff;
         text-align: start;
         margin-left: 4%;
     }
@@ -518,11 +512,11 @@
     }
 
     .cs-munu_toggle span,
-    .cs-munu_toggle span:before,
-    .cs-munu_toggle span:after {
+    .cs-munu_toggle span::before,
+    .cs-munu_toggle span::after {
         width: 100%;
         height: 2px;
-        background-color: currentColor;
+        background-color: currentcolor;
         display: block;
     }
 
@@ -534,7 +528,7 @@
         transition-delay: 0.2s;
     }
 
-    .cs-munu_toggle span:before {
+    .cs-munu_toggle span::before {
         content: '';
         position: absolute;
         margin-top: -9px;
@@ -543,7 +537,7 @@
         transition-delay: 0.2s, 0s;
     }
 
-    .cs-munu_toggle span:after {
+    .cs-munu_toggle span::after {
         content: '';
         position: absolute;
         margin-top: 9px;
@@ -554,22 +548,22 @@
 
     .cs-site_header.cs-style1 .cs-munu_toggle {
         top: 50%;
-        right: 0px;
+        right: 0;
         margin-top: -13px;
     }
 
     .cs-toggle_active span {
-        background-color: rgba(0, 0, 0, 0);
+        background-color: rgb(0 0 0 / 0%);
         transition-delay: 0.2s;
     }
 
-    .cs-toggle_active span:before {
+    .cs-toggle_active span::before {
         margin-top: 0;
         transform: rotate(45deg);
         transition-delay: 0s, 0.2s;
     }
 
-    .cs-toggle_active span:after {
+    .cs-toggle_active span::after {
         margin-top: 0;
         transform: rotate(-45deg);
         transition-delay: 0s, 0.2s;
@@ -591,14 +585,14 @@
         height: 3px;
     }
 
-    .cs-site_header .current-menu-item>a:before {
+    .cs-site_header .current-menu-item>a::before {
         display: none;
     }
 
     .cs-site_header.cs-style1.cs-type4 .cs-main_header_in {
         padding: 0;
         box-shadow: none;
-        border-radius: 0px;
+        border-radius: 0;
         margin-top: 0;
         background-color: transparent;
     }
@@ -627,7 +621,7 @@
     }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (width <= 991px) {
     .cs-site_header .container {
         max-width: 100%;
     }
@@ -641,7 +635,7 @@
     }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (width <= 575px) {
     .cs-hamburger_wrap .cs-hamburger {
         margin-right: 0;
     }

@@ -1,84 +1,222 @@
 import React, { useState, useEffect } from "react";
-
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { MaquinaDeEscrever } from "./utils/automate"
-
+import Preloader from "../../layout/preLoader/Preloader.jsx";
+import Aos from 'aos';
 
 function Home() {
 
-
-    //<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    const [profile, setProfile] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+      // callApis()
+      setTimeout(() => {
+        setIsLoading(false);
+        setProfile(!profile);
+      }, 1500);
+      Aos.init({ once: true });
+  }, []);
 
 
     return (
         <>
-            <div class="main">
-                <div class="d1"></div>
-                <div class="d2"></div>
-                <div class="d3"></div>
-                <div class="d4"></div>
-            </div >
-            <div class='home-desktop' data-aos="zoom-in">
-                <div class='row  images-intro'>
-                    <p class='text-who' data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">WHO </p>
-                    <p class='text-am' data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000">AM </p>
-                    <p class='text-ii' data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1500">I? </p>
+         {isLoading ? <Preloader /> :<> </>}
+            <div class='page-home'>
+                <div style={{cursor: !profile ? 'pointer' : 'auto'}} onClick={e => !profile ? setProfile(!profile) : ''} class={`${profile == true ? 'side-bio' : 'side-bio hide-side-bio'} d-flex justify-content-center align-items-start row`} id="myHeader" >
 
-                </div>
-
-                <div class='description'>
-
-                    <div class="card-intro">
-                        <p class="descriptionTitle" >
-                            <MaquinaDeEscrever delay="3000" text="I'm Eliseu," />
-                        </p>
-                        <p class="descriptionContent" >
-                            <MaquinaDeEscrever delay="4300" text="a tech enthusiast who is always working on system developments. My proficiency is programming, but I deal with databases, designs, DevOps, project management, and many other tech solutions." />
-                        </p>
-                        <div class="share">
-                            <a href="https://github.com/eliseu441/eliseu441"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-                            </svg></a>
-
-                            <a href="https://www.linkedin.com/in/eliseu-caetano-da-silva-68a272186/"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-
-                            </svg></a>
-                            <a class='curriculum' href="https://portifolio-vite-dun.vercel.app/cv/curriculum.pdf"><span class="tooltiptext">CV</span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-file-earmark-arrow-down-fill" viewBox="0 0 16 16">
-                                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0" />
-                            </svg></a>
-
-
+                    <div class="typer d-flex justify-content-center row mt-3">
+                        <img src="/img/bio_icon.jpg" class='icon col-12' alt="" />
+                        <div class='col-12 d-flex justify-content-center ms-4 mt-2'>
+                            <div class='col-10 ms-2'>
+                                <a href="https://github.com/eliseu441"><img src="https://readme-typing-svg.demolab.com?font=Monsterrat&weight=700&size=22&duration=1000&pause=700&color=F7F7F7&random=false&width=435&lines=I'm+Eliseu;I'm+a+full-stack;I'm+a+designer;I'm+a+database-manager" alt="Typing SVG" /></a>
+                            </div>
+                        </div>
+                        <div class='bio d-flex justify-content-center align-items-start row'>
+                            <div class='d-flex justify-contnt-between bio-info'>
+                                <h5>Age:</h5>
+                                <h5>24</h5>
+                            </div>
+                            <div class='d-flex col-12 justify-contnt-between bio-info'>
+                                <h5>City:</h5>
+                                <h5>São Paulo</h5>
+                            </div>
+                            <div class='d-flex justify-contnt-between bio-info'>
+                                <h5>Current Company:</h5>
+                                <h5>Alloha</h5>
+                            </div>
 
                         </div>
+                        <div class='d-flex col-12 justify-content-center'>
+                            <button class="Btn linkedin me-2">
+                                <span class="svgContainer">
+                                    <svg
+                                        viewBox="0 0 448 512"
+                                        height="1.6em"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="svgIcon"
+                                        fill="white"
+                                    >
+                                        <path
+                                            d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+                                        ></path>
+                                    </svg>
+                                </span>
+                                <span class="BG"></span>
+                            </button>
+                            <button class="Btn github">
+                                <span class="svgContainer">
+                                    <svg fill="white" viewBox="0 0 496 512" height="1.6em"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+                                </span>
+                                <span class="BG"></span>
+                            </button>
+                            <button class="Btn">
+                                <span class="svgContainer " >
+                                    <a class='curriculum' href="https://portifolio-2024-lovat.vercel.app/cv/curriculum.pdf"><span class="tooltiptext">CV</span> <i class="bi bi-filetype-pdf ms-2 "></i></a>
+
+                                </span>
+                            </button>
+                        </div>
+                        <div class='col-12 d-flex justify-content-end'>
+                            <button class="Btn" onClick={e => setProfile(!profile)}>
+                                <span class="svgContainer ">
+                                    <a class='curriculum'><span class="tooltiptext">hide</span> <i class="bi bi-arrow-left-circle-fill fs-1 information"></i></a>
+
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class='d-flex justify-content-end' data-aos="fade-left"data-aos-duration="1000" data-aos-delay="1000" style={{ zIndex:2, position:"relative" }} >
+                <div class={`${profile == true ? 'col-7 d-flex justify-content-end p-0 m-0' : 'col-11 d-flex justify-content-end p-0 m-0'} `} style={{ transition: 'all 1s'}}>
+                    <div className='card-experiences d-flex align-items-center' >
+                        <span class='title-experience col-sm-10 d-flex justify-content-center m-0 p-0'>EXPERIENCE</span>
+
+                    </div>
                     </div>
                 </div>
+                <div class="main">
+                    <div class="d1"></div>
+                    <div class="d2"></div>
+                    <div class="d3"></div>
+                    <div class="d4"></div>
+                </div >
 
 
-            </div>
+                <div className="experiences d-flex justify-content-end pe-3" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
 
-            <div class="home-mobile">
-
-                <div class='title' data-aos="fade-left" data-aos-duration="1000"><span>Welcome</span></div>
-                <div class='project-subtitle' data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800"><span>this is my portifolio...</span></div>
-                <div class='card-intro-mobile' data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1500">
-                    <div class='card-mobile-content'>
-                        <p class='desciption-title-mobile'><MaquinaDeEscrever delay="3000" text="I'm Eliseu," /></p>
-                        <p class='desciption-sub-mobile'><MaquinaDeEscrever delay="4300" text="a tech enthusiast who is always working on system developments. My proficiency is programming, but I deal with databases, designs, DevOps, project management, and many other tech solutions." /></p>
-                    </div>
-
-                    <div class="share">
-                        <a href="https://github.com/eliseu441/eliseu441"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-github me-3" viewBox="0 0 16 16">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-                        </svg></a>
-
-                        <a href="https://www.linkedin.com/in/eliseu-caetano-da-silva-68a272186/"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-                        </svg></a>
+                    <div class={`${profile == true ? 'col-sm-7' : 'col-sm-12'} `} style={{ transition: 'all 1s' }}>
 
 
+                        <VerticalTimeline>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--teste"
+
+                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                date="2020"
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
+                                iconStyle={{ background: '#43d131', color: 'white', display: 'flex' }}
+                                icon={<h3 style={{ margin: 'auto' }}><i class="bi bi-flag-fill"></i></h3>}
+
+                            >
+                                <h3 className="vertical-timeline-element-title">Start</h3>
+                                <p>
+                                    I was studying computer engineering at <a target="_blank" href="https://unisal.br/" style={{color:'red', fontWeight:'bolder'}}>UNISAL</a> and in parallel a 
+                                    <a target="_blank" href="https://www.udemy.com/certificate/UC-d04360cc-1ecd-41e9-9a66-3d621a79c78a/" > Web Course with JavaScript at Udemy </a> 
+                                     and <a target="_blank" href="https://cursos.alura.com.br/degree/certificate/014f8585-55f1-4422-b0ae-c7e9b0f4bd2a" >ALURA</a>, this gave me the base start projects and api's using react, node and js.
+                                </p>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--teste"
+                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                date="2021"
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
+                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                icon={<h3 style={{ margin: 'auto' }}>2</h3>}
+
+                            >
+                                <h3 className="vertical-timeline-element-title">Smarkio</h3>
+                                <p>
+                                    Start working on system developments having daily contact with creation of api services using javascript, node, docker, aws s3 and aws logs analisys using lambda.
+                                </p>
+                            </VerticalTimelineElement><VerticalTimelineElement
+                                className="vertical-timeline-element--teste"
+                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
+                                date="2021"
+                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                icon={<h3 style={{ margin: 'auto' }}>3</h3>}
+
+                            >
+                                <h3 className="vertical-timeline-element-title">Zenvia</h3>
+                                <p>
+                                    This year i have started some courses to improve my skills, the main ones are 
+                                    <a target="_blank" href="https://cursos.alura.com.br/certificate/7dc99eff-654e-4d74-8e71-96dc0173e4dd" > Rocketseat and Alura </a>
+                                      courses with focus on back-end development using javascript and  database structures knowledge like <a target="_blank" href="https://cursos.alura.com.br/certificate/eliseu-silva4/microsoft-sql-server-2022-consultas-avancadas" >PL/SQL </a>.
+                                </p>
+                            </VerticalTimelineElement><VerticalTimelineElement
+                                className="vertical-timeline-element--teste"
+                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
+                                date="2022"
+                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                icon={<h3 style={{ margin: 'auto' }}>4</h3>}
+
+                            >
+                                <h3 className="vertical-timeline-element-title">Vivo</h3>
+                                <p>
+                                    I was hired at vivo, by far this is where I gained more knowledge, not just as a developer but as a project designer, infrastructure maintenance, databases creation and maintenance, physical servers, cloud server deployments and more.
+                                </p>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--teste"
+                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
+                                date="2022"
+                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                icon={<h3 style={{ margin: 'auto' }}>5</h3>}
+
+                            >
+                                <h3 className="vertical-timeline-element-title">Vivo project</h3>
+                                <p>
+                                    At vivo my main case was called  "sites-fibrados", this system was made to migrate a legacy project into new technologies, unify different areas into a new database to solve 
+                                    incongruity of informations, new business rules to a workflow system and many other features, I headed this project from the scratch and made all the code implementations like deploys, database structures, firewall exceptions and more...
+                                </p>
+                            </VerticalTimelineElement>
+                            
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--teste"
+                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
+                                date="2024"
+                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                icon={<h3 style={{ margin: 'auto' }}>6</h3>}
+
+                            >
+                                <h3 className="vertical-timeline-element-title">Alloha</h3>
+                                <p>
+                                    At alloha i've working with a legacy project made in node, angular, vite, docker, mysql(5.6), php and some old tech's, my job is about maintenance this service and analize troubletickets finding solutions for bugs.
+                                </p>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--teste"
+                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
+                                date="2024"
+                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                icon={<h3 style={{ margin: 'auto' }}>6</h3>}
+
+                            >
+                                <h3 className="vertical-timeline-element-title">Now</h3>
+                                <p>
+                                    besides my job i'm working on some projects to improve my skills and know more ways to deal with problems involving techs like db, etl, infra and code troubles, i've made many solutions(in many lang's like rust, c#, js, ts) and deployed them on amazon ec2, eds(postgres-db), google cloud vm's and digital ocean vm's, this gave me a lot about devops operations, you can contact me to acess this servers for analisys.
+                                </p>
+                            </VerticalTimelineElement>
+                        </VerticalTimeline>
                     </div>
                 </div>
-
+                
             </div>
         </>
     )

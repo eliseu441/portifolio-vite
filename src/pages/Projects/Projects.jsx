@@ -9,6 +9,8 @@ import bg2 from './img/parallax_effect/bubble2.png';
 import bg3 from './img/parallax_effect/bubble3.png';
 import bg4 from './img/parallax_effect/bubble4.png';
 import bg5 from './img/parallax_effect/bubble5.png';
+import Preloader from "../../layout/preLoader/Preloader.jsx";
+import Aos from 'aos';
 const settings = {
     dots: true,
     dotsClass: "slick-dots slick-thumb",
@@ -20,12 +22,21 @@ const settings = {
 
 
 function Projects() {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [projeto, setProjeto] = useState(1);
     const [nomeProjeto, setNomeProjeto] = useState('vergz');
     const [description, setDescription] = useState('TESTE');
 
 
+    const [profile, setProfile] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+      // callApis()
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
+      Aos.init({ once: true });
+  }, []);
 
     useEffect(() => {
         // callApis()
@@ -75,7 +86,9 @@ function Projects() {
 
     return (
         <>
+         {isLoading ? <Preloader /> :<> </>} 
             <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+       
             <div class='default-project'>
                 <div class="parallax-wrap" data-aos="zoom-in" data-aos-duration="1000">
                     <img value="-15" src={bg5} />
@@ -84,10 +97,11 @@ function Projects() {
                     <img value="-5" src={bg4} />
                     <img value="15" src={bg1} />
                 </div>
-                <div class='bg-projects'>
+                <div class='bg-projects '>
                 </div>
 
                 <div class='page-projects row' >
+                    
 
                     <div class='title mt-3' data-aos="fade-left" data-aos-duration="1000"><span>PROJECTS</span></div>
 

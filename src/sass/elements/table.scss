@@ -5,45 +5,50 @@
     width: 100vw;
     min-height: 100vh;
     padding: 10px;
-    background-color: #000000;
+    background-color: #0000;
     padding-top: 100px!important;
     overflow: hidden;
-    background-image: url('/img/bg_repos.jpg');
     background-size: cover;
 
 
 }
+
 .table-repos{
     max-width: 90vw!important;
     height: max-content;
     overflow-x: scroll;
-    background-color: rgba(43, 43, 43, 0.7);
+    background-color: rgb(43 43 43 / 0%);
     padding: 10px;
     border-radius: 10px;
 }
+
 .page-repos .title{
     color: white;
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 700;
     font-size: 3rem;
 }
+
 .table-striped thead tr th{
     color: white;
-    background: rgb(65,65,65);
-    background: linear-gradient(0deg, rgba(65,65,65,1) 0%, rgba(0,0,0,1) 50%, rgba(45,45,45,1) 100%);
- }
+    background: rgb(65 65 65 / 0%);
+  
+}
+
  .custom-table  {
     padding: 609px!important;
  }
+
 .page-link{
     background-color: #4b4b4b!important;
-    border-color: rgb(61, 61, 61)!important;
-    color: rgb(206, 206, 206)!important;
+    border-color: rgb(61 61 61)!important;
+    color: rgb(206 206 206)!important;
  }
+
  .active .page-link {
-    background-color: #000000!important;
-    color: rgb(255, 94, 0)!important;
+    background-color: #000!important;
+    color: rgb(255 94 0)!important;
  }
  
-@media  (min-width: 901px) {
+@media  (width >= 901px) {
 }
