@@ -1,0 +1,54 @@
+.page-repos{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 10px;
+    background-color: #0000;
+    padding-top: 100px!important;
+    overflow: hidden;
+    background-size: cover;
+
+
+}
+
+.table-repos{
+    max-width: 90vw!important;
+    height: max-content;
+    overflow-x: scroll;
+    background-color: rgb(43 43 43 / 0%);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.page-repos .title{
+    color: white;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.table-striped thead tr th{
+    color: white;
+    background: rgb(65 65 65 / 0%);
+  
+}
+
+ .custom-table  {
+    padding: 609px!important;
+ }
+
+.page-link{
+    background-color: #4b4b4b!important;
+    border-color: rgb(61 61 61)!important;
+    color: rgb(206 206 206)!important;
+ }
+
+ .active .page-link {
+    background-color: #000!important;
+    color: rgb(255 94 0)!important;
+ }
+ 
+@media  (width >= 901px) {
+}
