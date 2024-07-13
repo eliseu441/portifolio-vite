@@ -21,14 +21,14 @@
         width: 3px;
         padding: 10px 15px;
         height: 35px;
-        border: 2px solid #fff;
+        border: 3px solid #fff;
         border-radius: 25px;
         opacity: 0.75;
         box-sizing: content-box;
     }
 
     .scroller {
-        width: 3px;
+        width: 4px;
         height: 10px;
         border-radius: 25%;
         background-color: #fff;
@@ -65,44 +65,8 @@
 
     }
 
-    .page-experience .title {
-        margin: 0 !important;
-        padding: 0 6vh 0 6vh;
-        width: max-content;
-        font-family: "IBM Plex Sans", sans-serif;
-        font-weight: 700;
-        font-size: 6.5vh;
-        left: 10%;
-    }
-
-    .page-experience .project-subtitle {
-        color: white;
-        text-align: center;
-        margin: 0px 3vw 30px 0;
-        font-family: "IBM Plex Sans", sans-serif;
-        font-weight: 700;
-        font-size: 3vh;
-        left: 10%;
-
-    }
 
 
-
-    .experience-content {
-
-        margin-top: 50px;
-        margin-left: 20px;
-        border: 2px solid #FF4A17;
-        color: black;
-        width: max-content;
-        height: max-content;
-        background-color: rgb(39, 39, 39);
-        border-radius: 30px;
-
-        height: max-content;
-        width: 90vw !important;
-        padding: 20px;
-    }
 
     .tools {
         font-family: 'Archivo Black', sans-serif;

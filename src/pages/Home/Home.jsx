@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { MaquinaDeEscrever } from "./utils/automate"
-
+import Preloader from "../../layout/preLoader/Preloader.jsx";
+import Aos from 'aos';
 
 function Home() {
 
     const [profile, setProfile] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+      // callApis()
+      setTimeout(() => {
+        setIsLoading(false);
+        setProfile(!profile);
+      }, 1500);
+      Aos.init({ once: true });
+  }, []);
 
 
     return (
         <>
+         {isLoading ? <Preloader /> :<> </>}
             <div class='page-home'>
                 <div onClick={e => !profile ? setProfile(!profile) : ''} class={`${profile == true ? 'header' : 'header hideHeader'} d-flex justify-content-center align-items-start row`} id="myHeader" >
 
                     <div class="typer d-flex justify-content-center row mt-3">
-                        <img src="/img/mock.png" class='icon col-12' alt="" />
+                        <img src="/img/bio_icon.jpg" class='icon col-12' alt="" />
                         <div class='col-12 d-flex justify-content-center ms-4 mt-2'>
                             <div class='col-8 '>
                                 <a href="https://github.com/eliseu441"><img src="https://readme-typing-svg.demolab.com?font=Monsterrat&weight=700&size=22&duration=2000&pause=700&color=F7F7F7&random=false&width=435&lines=I'm+Eliseu;I'm+a+full-stack+dev;I'm+a+designer" alt="Typing SVG" /></a>
@@ -60,7 +71,7 @@ function Home() {
                             </button>
                             <button class="Btn">
                                 <span class="svgContainer " >
-                                    <a class='curriculum' href="https://portifolio-2024-lovat.vercel.app/cv/curriculum.pdf"><span class="tooltiptext">CV</span> <i class="bi bi-filetype-pdf fs-1 ms-2 "></i></a>
+                                    <a class='curriculum' href="https://portifolio-2024-lovat.vercel.app/cv/curriculum.pdf"><span class="tooltiptext">CV</span> <i class="bi bi-filetype-pdf ms-2 "></i></a>
 
                                 </span>
                             </button>
@@ -77,9 +88,9 @@ function Home() {
 
 
                 </div>
-                <div class='d-flex justify-content-end'>
-                <div class={`${profile == true ? 'col-7 d-flex justify-content-end p-0 m-0' : 'col-11 d-flex justify-content-end p-0 m-0'} `} style={{ transition: 'all 1s' }}>
-                    <div className='card-experiences d-flex align-items-center' style={{ backgroundImage: 'url(./img/cta_bg.jpeg)' }} data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
+                <div class='d-flex justify-content-end' data-aos="fade-left"data-aos-duration="1000" data-aos-delay="1000" style={{ zIndex:2, position:"relative" }} >
+                <div class={`${profile == true ? 'col-7 d-flex justify-content-end p-0 m-0' : 'col-11 d-flex justify-content-end p-0 m-0'} `} style={{ transition: 'all 1s'}}>
+                    <div className='card-experiences d-flex align-items-center' >
                         <span class='title-experience col-sm-10 d-flex justify-content-center m-0 p-0'>EXPERIENCE</span>
 
                     </div>
@@ -105,13 +116,15 @@ function Home() {
                                 contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
                                 date="2020"
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
-                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
-                                icon={<h3 style={{ margin: 'auto' }}>1</h3>}
+                                iconStyle={{ background: '#43d131', color: 'white', display: 'flex' }}
+                                icon={<h3 style={{ margin: 'auto' }}><i class="bi bi-flag-fill"></i></h3>}
 
                             >
-                                <h3 className="vertical-timeline-element-title">Beginning of a developer career</h3>
+                                <h3 className="vertical-timeline-element-title">Start</h3>
                                 <p>
-                                    I was studying computer engineering and in parallel a Web Course with JavaScript at Udemy and alura, this gave me the base to deal with programming using front-end techs like css and react.
+                                    I was studying computer engineering at <a target="_blank" href="https://unisal.br/" style={{color:'red', fontWeight:'bolder'}}>UNISAL</a> and in parallel a 
+                                    <a target="_blank" href="https://www.udemy.com/certificate/UC-d04360cc-1ecd-41e9-9a66-3d621a79c78a/" > Web Course with JavaScript at Udemy </a> 
+                                     and <a target="_blank" href="https://cursos.alura.com.br/degree/certificate/014f8585-55f1-4422-b0ae-c7e9b0f4bd2a" >ALURA</a>, this gave me the base start projects and api's using react, node and js.
                                 </p>
                             </VerticalTimelineElement>
                             <VerticalTimelineElement
@@ -125,7 +138,7 @@ function Home() {
                             >
                                 <h3 className="vertical-timeline-element-title">Smarkio</h3>
                                 <p>
-                                    Start working on system developments having daily contact with creation of api services using node, this was a good experience to know a lot of things about node frameworks and api's structure.
+                                    Start working on system developments having daily contact with creation of api services using javascript, node, docker, aws s3 and aws logs analisys using lambda.
                                 </p>
                             </VerticalTimelineElement><VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
@@ -138,7 +151,9 @@ function Home() {
                             >
                                 <h3 className="vertical-timeline-element-title">Zenvia</h3>
                                 <p>
-                                    This year i have started some courses to improve my skills, the main ones are Rocketseat and Alura courses with focus on back-end development using javascript and database structures.
+                                    This year i have started some courses to improve my skills, the main ones are 
+                                    <a target="_blank" href="https://cursos.alura.com.br/certificate/7dc99eff-654e-4d74-8e71-96dc0173e4dd" > Rocketseat and Alura </a>
+                                      courses with focus on back-end development using javascript and  database structures knowledge like <a target="_blank" href="https://cursos.alura.com.br/certificate/eliseu-silva4/microsoft-sql-server-2022-consultas-avancadas" >PL/SQL </a>.
                                 </p>
                             </VerticalTimelineElement><VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
@@ -158,9 +173,25 @@ function Home() {
                                 className="vertical-timeline-element--teste"
                                 contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
-                                date="2024"
+                                date="2022"
                                 iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
                                 icon={<h3 style={{ margin: 'auto' }}>5</h3>}
+
+                            >
+                                <h3 className="vertical-timeline-element-title">Vivo project</h3>
+                                <p>
+                                    At vivo my main case was called  "sites-fibrados", this system was made to migrate a legacy project into new technologies, unify different areas into a new database to solve 
+                                    incongruity of informations, new business rules to a workflow system and many other features, I headed this project from the scratch and made all the code implementations like deploys, database structures, firewall exceptions and more...
+                                </p>
+                            </VerticalTimelineElement>
+                            
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--teste"
+                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
+                                date="2024"
+                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                icon={<h3 style={{ margin: 'auto' }}>6</h3>}
 
                             >
                                 <h3 className="vertical-timeline-element-title">Alloha</h3>

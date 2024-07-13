@@ -5,10 +5,9 @@
     width: 100vw;
     min-height: 100vh;
     padding: 10px;
-    background-color: #000000;
+    background-color: #00000000;
     padding-top: 100px!important;
     overflow: hidden;
-    background-image: url('/img/bg_repos.jpg');
     background-size: cover;
 
 
@@ -17,7 +16,7 @@
     max-width: 90vw!important;
     height: max-content;
     overflow-x: scroll;
-    background-color: rgba(43, 43, 43, 0.7);
+    background-color: rgba(43, 43, 43, 0);
     padding: 10px;
     border-radius: 10px;
 }
@@ -29,9 +28,9 @@
 }
 .table-striped thead tr th{
     color: white;
-    background: rgb(65,65,65);
-    background: linear-gradient(0deg, rgba(65,65,65,1) 0%, rgba(0,0,0,1) 50%, rgba(45,45,45,1) 100%);
- }
+    background: rgb(65,65,65, 0);
+  
+}
  .custom-table  {
     padding: 609px!important;
  }
