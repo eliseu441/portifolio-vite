@@ -1,13 +1,14 @@
 
 @keyframes animStar {
     from {
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 
     to {
         transform: translateY(-2000px);
     }
 }
+
 .stars {
     color: #ff5020;
     position: fixed;
@@ -24,7 +25,7 @@
     animation: animStar 40s linear infinite;
 }
 
-#stars:after {
+#stars::after {
     content: " ";
     position: absolute;
     top: 2000px;
@@ -42,7 +43,7 @@
     animation: animStar 80s linear infinite;
 }
 
-#stars2:after {
+#stars2::after {
     content: " ";
     position: absolute;
     top: 2000px;
@@ -60,7 +61,7 @@
     animation: animStar 120s linear infinite;
 }
 
-#stars3:after {
+#stars3::after {
     content: " ";
     position: absolute;
     top: 2000px;

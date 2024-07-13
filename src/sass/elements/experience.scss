@@ -1,18 +1,15 @@
-@media (min-width: 2px) {
-    @import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap");
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+@media (width >= 2px) {
+    @import "https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap";
+    @import 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap';
 
     .aviso {
         display: none
     }
+
     .scroll-downs {
         position: flex;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        inset: 0;
         margin: auto;
-
         width: 34px;
         height: 55px;
     }
@@ -55,8 +52,6 @@
     }
 
     .page-experience {
-
-        width: 100vw;
         padding-top: 100px;
         width: 100vw;
         display: flex;
@@ -86,7 +81,7 @@
         text-align: center;
         align-items: center;
         border-radius: 20px;
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgb(255 255 255 / 80%);
         position: relative;
         cursor: pointer;
         transition: ease 1s;
@@ -94,10 +89,10 @@
 
     .icons:hover {
         transform: scale(1.2);
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgb(255 255 255 / 90%);
         ;
     }
 
 }
 
-@media (max-width: 770px) {}
+@media (width <= 770px) {}

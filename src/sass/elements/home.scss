@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap';
 
 .title {
   color: white;
 }
 
 #root {
-  background-color: #000000 !important;
+  background-color: #000 !important;
   color: white;
   width: 100vw;
   overflow-x: hidden;
@@ -15,7 +15,7 @@ body,
 main {
   width: 100vw;
   overflow-x: hidden;
-  background-color: #000000 !important;
+  background-color: #000 !important;
 
 }
 
@@ -35,7 +35,6 @@ main {
 
 
 @keyframes bg-animation {
-
   0%,
   100% {
     filter: grayscale(70%) brightness(70%) sepia(50%) hue-rotate(-100deg) saturate(500%) contrast(1);
@@ -47,7 +46,6 @@ main {
 }
 
 @keyframes show-icons {
-
   0% {
     opacity: 0;
   }
@@ -74,7 +72,7 @@ main {
   0% {}
 
   50% {
-    background-position: Calc(0vw - 80px) 50%;
+    background-position: calc(0vw - 80px) 50%;
   }
 }
 
@@ -82,7 +80,7 @@ main {
   0% {}
 
   50% {
-    background-position: Calc(-10vw - 80px) 50%;
+    background-position: calc(-10vw - 80px) 50%;
   }
 }
 
@@ -90,7 +88,7 @@ main {
   0% {}
 
   50% {
-    background-position: Calc(-35vw - 80px) 50%;
+    background-position: calc(-35vw - 80px) 50%;
   }
 }
 
@@ -98,7 +96,7 @@ main {
   0% {}
 
   50% {
-    background-position: Calc(-70vw - 80px) 50%;
+    background-position: calc(-70vw - 80px) 50%;
   }
 }
 
@@ -116,21 +114,19 @@ main {
   height: 100vh;
   width: 100vw;
   position: fixed;
+  top:0;
   z-index: 1;
-  background-color: rgb(0, 0, 0, 1);
+  background-color: rgb(0 0 0 / 100%);
 }
 
 .d1 {
   position: absolute;
   background-image: url('/img/bg_home.jpg');
   background-size: 2700px 1500px;
-
   height: 30vh;
   width: 15vw;
-
   background-position: 0 50%;
-
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 25px rgb(0 0 0 / 80%);
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
@@ -141,13 +137,10 @@ main {
   position: absolute;
   background-image: url('/img/bg_home.jpg');
   background-size: 2700px 1500px;
-
   height: 50vh;
   width: 25vw;
-
   background-position: -10vw 50%;
   left: 10vw;
-
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
@@ -160,13 +153,11 @@ main {
   background-image: url('/img/bg_home.jpg');
   background-size: 2700px 1500px;
   overflow: hidden;
-
   height: 100vh;
   width: 40vw;
   left: 25vw;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 25px rgb(0 0 0 / 80%);
   background-position: -35vw 50%;
-
   top: 50%;
   transform: translateY(-50%);
   z-index: 3;
@@ -178,12 +169,10 @@ main {
   overflow: hidden;
   background-image: url('/img/bg_home.jpg');
   background-size: 2700px 1500px;
-
   height: 80vh;
   width: 25vw;
   left: 60vw;
   background-position: -70vw 50%;
-
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
@@ -193,7 +182,6 @@ main {
 
 
 .home-desktop {
-
   min-height: 484px;
   height: 110vh;
   width: 100vw;
@@ -203,7 +191,7 @@ main {
   align-items: center;
   position: relative;
   z-index: 2;
-  background-color: rgb(0, 0, 0, 0);
+  background-color: rgb(0 0 0 / 0%);
 }
 
 .container {
@@ -219,7 +207,6 @@ main {
 
 .apresentation-text {
   min-height: 477px;
-  position: absolute;
   display: grid;
   justify-content: baseline;
   align-items: end;
@@ -229,7 +216,7 @@ main {
   position: absolute;
   font-size: 90px;
   font-family: 'Archivo Black', sans-serif;
-  text-shadow: -1px -1px 8px rgb(102, 255, 0);
+  text-shadow: -1px -1px 8px rgb(102 255 0);
 
 }
 
@@ -241,7 +228,7 @@ main {
   display: flex;
   justify-content: end;
   align-items: center;
-  background-color: rgb(0, 0, 0, 0);
+  background-color: rgb(0 0 0 / 0%);
 
 }
 
@@ -253,16 +240,16 @@ main {
 
 .text-am {
   height: 200px;
-  margin: -50px 0 0 0;
+  margin: -50px 0 0;
 }
 
 .text-ii {
   height: 200px;
-  margin: -50px 0 50px 0;
+  margin: -50px 0 50px;
 }
 
 .images-intro {
-  background-color: rgb(0, 0, 0, 0);
+  background-color: rgb(0 0 0 / 0%);
   height: 90vh;
   width: 30vw;
   min-width: 470px;
@@ -282,13 +269,13 @@ main {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   -webkit-text-fill-color: transparent;
-  background: rgb(255, 205, 0);
-  background: linear-gradient(60deg, rgba(255, 205, 0, 1) 16%, rgba(255, 102, 0, 1) 45%, rgba(255, 192, 0, 1) 79%);
-  -webkit-background-clip: text;
+  background: rgb(255 205 0);
+  background: linear-gradient(60deg, rgb(255 205 0 / 100%) 16%, rgb(255 102 0 / 100%) 45%, rgb(255 192 0 / 100%) 79%);
+  background-clip: text;
 }
 
 body {
-  background-color: #000000;
+  background-color: #000;
   color: white;
 }
 
@@ -296,10 +283,9 @@ body {
   white-space: pre-wrap;
   font-family: 'Archivo Black', sans-serif;
   width: 100%;
-  color: #ffffff;
-
+  color: #fff;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(0, 0, 0);
+  -webkit-text-stroke-color: rgb(0 0 0);
   -webkit-text-fill-color: white;
   text-align: start;
   height: 50vh;
@@ -309,14 +295,14 @@ body {
 
 .descriptionTitle {
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgb(0, 0, 0);
+  -webkit-text-stroke-color: rgb(0 0 0);
   -webkit-text-fill-color: white;
   white-space: pre-wrap;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 700;
   font-size: 9vh;
   width: 100%;
-  color: #ffffff;
+  color: #fff;
   text-align: start;
   margin: 0;
 }
@@ -326,16 +312,15 @@ body {
   min-height: 423px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgb(0, 0, 0, 0.3);
-  border: 2px solid rgb(255, 94, 0);
-  -webkit-backdrop-filter: blur(2px);
+  background-color: rgb(0 0 0 / 30%);
+  border: 2px solid rgb(255 94 0);
+  backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   width: 52vw;
   padding: 2vw;
   height: 80vh;
   transition: 1s ease-in-out;
   clip-path: polygon(100% 20%, 100% 80%, 80% 100%, 0 100%, 0 0, 80% 0);
-
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
   display: flex;
@@ -383,7 +368,7 @@ body {
 }
 
 .description .card-intro .curriculum {
-  color: rgb(102, 255, 0);
+  color: rgb(102 255 0);
   transition: .4s ease-in-out;
 }
 
@@ -395,7 +380,7 @@ body {
   opacity: 0;
   color: white;
   font-weight: 500;
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
   margin: -10px 0 0 15px !important;
   font-size: 10px;
   text-align: center;
@@ -407,11 +392,12 @@ body {
   opacity: 1;
   transition: all 0.4s;
 }
+
 .curriculum .bi-filetype-pdf{
   font-size: 40px;
   -webkit-text-stroke-width: 0.7px;
   -webkit-text-stroke-color: red;
-  color: rgb(255, 0, 0)!important;
+  color: rgb(255 0 0)!important;
 }
 
 .description .card-intro a:hover {
@@ -425,8 +411,8 @@ body {
   border-radius: 25px;
   border: none;
   font-weight: bold;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
+  background: #fff;
+  color: rgb(0 0 0);
   transition: .4s ease-in-out;
 }
 
@@ -440,15 +426,14 @@ body {
 
 
 
-@media (min-width: 901px) {
-
+@media (width >= 901px) {
   .home-mobile {
     display: none;
 
   }
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .home-desktop {
     display: none !important;
   }
@@ -464,7 +449,6 @@ body {
   }
 
   .fundo {
-
     background-position-x: -40vw;
   }
 
@@ -493,9 +477,9 @@ body {
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
     -webkit-text-fill-color: transparent;
-    background: rgb(255, 205, 0);
-    background: linear-gradient(60deg, rgba(255, 205, 0, 1) 16%, rgba(255, 102, 0, 1) 45%, rgba(255, 192, 0, 1) 79%);
-    -webkit-background-clip: text;
+    background: rgb(255 205 0);
+    background: linear-gradient(60deg, rgb(255 205 0 / 100%) 16%, rgb(255 102 0 / 100%) 45%, rgb(255 192 0 / 100%) 79%);
+    background-clip: text;
   }
 
 
@@ -507,16 +491,16 @@ body {
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
     -webkit-text-fill-color: transparent;
-    background: rgb(255, 255, 255);
-    -webkit-background-clip: text;
+    background: rgb(255 255 255);
+    background-clip: text;
   }
 
   .card-intro-mobile {
     margin: 5%;
     height: 60vh;
-    background-color: rgb(0, 0, 0, 0.1);
-    border: 2px solid rgb(255, 94, 0);
-    -webkit-backdrop-filter: blur(2px);
+    background-color: rgb(0 0 0 / 10%);
+    border: 2px solid rgb(255 94 0);
+    backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     padding: 2vw;
     transition: 1s ease-in-out;
@@ -528,22 +512,21 @@ body {
   }
 
   .card-mobile-content {
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: hidden scroll;
     width: 100%;
     height: 100%;
   }
 
   .desciption-title-mobile {
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: rgb(0, 0, 0);
+    -webkit-text-stroke-color: rgb(0 0 0);
     -webkit-text-fill-color: white;
     white-space: pre-wrap;
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 700;
     font-size: 43px;
     width: 100%;
-    color: #ffffff;
+    color: #fff;
     text-align: start;
     margin-left: 4%;
     margin-bottom: 0;
@@ -552,12 +535,11 @@ body {
   }
 
   .desciption-sub-mobile {
-
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 700;
     font-size: 23px;
     width: 90%;
-    color: #ffffff;
+    color: #fff;
     text-align: start;
     margin-left: 4%;
 
@@ -590,14 +572,15 @@ body {
 
 
 }
-.header {
+
+.side-bio {
   position: fixed;
   z-index: 2;
-  background: rgba(192, 80, 0, 0.1);
-  border: 4px solid rgba(82, 34, 0, 0.3);
+  background: rgba(0, 0, 0, 0.8); 
+  border-right: 6px solid #d84f00;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   color: #f1f1f1;
   top: 15%;
@@ -608,24 +591,33 @@ body {
   
 }
 
-@media (max-width: 900px) {
-  
-  .header {
-    width: 80vw;
-    max-width:80vw;
+@media (width <= 900px) {
+  .side-bio {
+    width: 98vw;
+    max-width:98vw;
     z-index: 4;
     
   }
   
+  .hide-side-bio{
+    transition: max-width 1s;
+    max-width:10vw!important;
+  }
 
+  .experiences{
+    padding-left: 10vw;
+  }
 }
-.hideHeader{
+
+.hide-side-bio{
   transition: max-width 1s;
   max-width:4vw;
 }
-.hideHeader .typer{
+
+.hide-side-bio .typer{
   display: none!important;
 }
+
  .icon{
   width: 170px!important;
   height: 170px!important;
@@ -634,35 +626,42 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
+
 .typer{
 overflow: hidden;
 }
+
 .typer .gif{
   margin-left: 30%;
 }
+
 .content {
   padding: 16px;
 }
+
 .bio-info{
   > :first-child {
     margin-left: 10%;
     white-space: nowrap;
   }
+
   > :last-child {
     justify-content: end;
     margin-right: 10%;
   }
 }
+
 .bio h5{
   width: 100%;
   display: flex;
   justify-content: start;
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   border-bottom: 1px outset white;
-  padding: 0 0 10px 0;
+  padding: 0 0 10px;
 }
+
 .sticky {
   position: fixed;
   top: 0;
@@ -678,11 +677,9 @@ overflow: hidden;
   padding-top: 100px;
   position: relative;
   z-index: 1;
-  background-color: #555;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgb(85, 85, 85, 0);
-
+  background-color: rgb(85 85 85 / 0%);
   transition: 1s ease-in-out;
 }
 
@@ -702,28 +699,29 @@ overflow: hidden;
   padding: 20px;
   margin-bottom: -100px;
   width: 100%;
-  transition: all 1s;
-  background: rgba(0, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(2px);
+  background: rgb(0 0 0 / 60%);
+  backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
 }
 
 .title-experience {
-  background-color: #000000;
+  background-color: #000;
   position: relative;
   z-index: 2;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 700;
   font-size: 2.6rem;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(0, 0, 0);
+  -webkit-text-stroke-color: rgb(0 0 0);
   -webkit-text-fill-color: transparent;
-  background: rgb(255, 94, 0);
-  -webkit-background-clip: text;
+  background: rgb(255 94 0);
+  background-clip: text;
 }
+
 .page-home{
   width: 100vw;
 }
+
 .Btn {
   width: 45px!important;
   height: 45px!important;
@@ -733,19 +731,23 @@ overflow: hidden;
   border: none;
   background-color: transparent;
   position: relative;
+
   /* overflow: hidden; */
   border-radius: 7px;
   cursor: pointer;
   transition: all 0.3s;
 }
+
 .linkedin .BG
 {
   background-color: #0077b5;
 }
+
 .github .BG{
-  background-color: #000000;
+  background-color: #000;
   border: 1px solid white;
 }
+
 .BG {
   position: absolute;
   content: "";
@@ -764,12 +766,11 @@ overflow: hidden;
 
 
 .information {
-
   font-size: 3.3vh;
   padding-top: 2px;
-  background: rgb(252, 246, 186);
-  background: linear-gradient(112.1deg, rgb(255, 115, 34) 11.4%, rgb(202, 74, 0) 70.2%);
-  -webkit-background-clip: text;
+  background: rgb(252 246 186);
+  background: linear-gradient(112.1deg, rgb(255 115 34) 11.4%, rgb(202 74 0) 70.2%);
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
 }

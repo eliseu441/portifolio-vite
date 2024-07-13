@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap';
+@import "https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap";
+@import 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap';
 
 .page-projects {
-    background-color: rgb(0, 0, 0, 0) !important;
+    background-color: rgb(0 0 0 / 0%) !important;
 }
 
 body {
-    background-color: rgb(0, 0, 0) !important;
+    background-color: rgb(0 0 0) !important;
 }
 
-@media (min-width: 2px) {
+@media (width >= 2px) {
     .icon-projects path {
         color: white;
     }
@@ -20,7 +20,6 @@ body {
     }
 
     .vergs-tattoo svg {
-
         cursor: pointer !important;
     }
 
@@ -30,8 +29,7 @@ body {
 
     .slick-track {
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
         align-items: stretch;
     }
 
@@ -66,7 +64,7 @@ body {
         width: 50px;
         height: 50px;
         display: block;
-        border: 2px solid rgba(255, 255, 255, .5);
+        border: 2px solid rgb(255 255 255 / 50%);
         background-color: #750099;
         position: relative;
         border-radius: 100%;
@@ -77,7 +75,7 @@ body {
         position: absolute;
         width: 12px;
         height: 12px;
-        color: rgba(255, 255, 255, .5);
+        color: rgb(255 255 255 / 50%);
         top: 50%;
         left: 50%;
         margin: -6px 0 0 -6px;
@@ -93,7 +91,7 @@ body {
         margin-left: -5px;
     }
 
-    .slider_nav .icon:after {
+    .slider_nav .icon::after {
         content: '';
         position: absolute;
         z-index: -1;
@@ -104,11 +102,11 @@ body {
         color: var(--mc1);
         opacity: .15;
         border-radius: 100%;
-        box-shadow: 0px 5px 20px;
+        box-shadow: 0 5px 20px;
         transition: all .3s ease;
     }
 
-    .slider_nav a:hover .icon:after {
+    .slider_nav a:hover .icon::after {
         opacity: .5;
     }
 
@@ -118,7 +116,7 @@ body {
 
     .parallax-wrap {
         z-index: 0;
-        background-color: #000000;
+        background-color: #000;
         position: fixed;
         height: 100vh;
         width: 100vw;
@@ -171,7 +169,7 @@ body {
 
     .page-projects .project-subtitle {
         color: white;
-        margin: 0px 3vw 30px 0;
+        margin: 0 3vw 30px 0;
         font-family: "IBM Plex Sans", sans-serif;
         font-weight: 700;
         font-size: 3vh;
@@ -182,10 +180,11 @@ body {
     .project-subtitle {
         color: white;
         font-weight: 500;
-        font-family: "Montserrat", sans-serif;
+        font-family: Montserrat, sans-serif;
         font-size: 20px;
         z-index: 2;
       }
+
     .title span {
         top: 50%;
         transform: translateY(-50%);
@@ -193,11 +192,9 @@ body {
 
 
     .bg-projects {
-
         z-index: -1;
-        background: rgb(217, 61, 0);
-        background: rgb(217, 61, 0);
-        background: radial-gradient(circle, rgb(68, 0, 77)0%, rgb(26, 26, 26) 60%);
+        background: rgb(217 61 0);
+        background: radial-gradient(circle, rgb(68 0 77)0%, rgb(26 26 26) 60%);
         width: 100vw;
         height: 100vh;
         overflow: hidden;
@@ -235,8 +232,8 @@ body {
         margin-right: 5vw;
         font-family: 'Archivo Black', sans-serif;
         font-size: 30px;
-        background: rgb(174, 118, 34);
-        background: linear-gradient(164deg, rgb(255, 153, 0) 15%, rgb(255, 64, 50) 48%, rgb(255, 153, 0) 83%);
+        background: rgb(174 118 34);
+        background: linear-gradient(164deg, rgb(255 153 0) 15%, rgb(255 64 50) 48%, rgb(255 153 0) 83%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -246,8 +243,8 @@ body {
         animation: show-up 0.5s linear;
         font-family: 'Archivo Black', sans-serif;
         font-size: 30px;
-        background: rgb(174, 118, 34);
-        background: linear-gradient(164deg, rgb(187, 187, 187) 40%, rgb(230, 0, 255) 48%, rgb(151, 151, 151) 57%);
+        background: rgb(174 118 34);
+        background: linear-gradient(164deg, rgb(187 187 187) 40%, rgb(230 0 255) 48%, rgb(151 151 151) 57%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
 
@@ -259,8 +256,8 @@ body {
         animation: show-up 0.5s linear;
         font-family: 'Archivo Black', sans-serif;
         font-size: 30px;
-        background: rgb(174, 118, 34);
-        background: linear-gradient(164deg, rgb(255, 255, 255) 15%, rgb(255, 255, 255) 48%, rgb(151, 151, 151) 83%);
+        background: rgb(174 118 34);
+        background: linear-gradient(164deg, rgb(255 255 255) 15%, rgb(255 255 255) 48%, rgb(151 151 151) 83%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
 
@@ -295,14 +292,14 @@ body {
         transition: all .3s ease-in;
         padding-right: 30px;
         padding-left: 30px;
-        -webkit-box-shadow: 1px 3px 15px 0px #6220fb;
-        -moz-box-shadow: 1px 3px 15px 0px #6220fb;
-        box-shadow: 1px 3px 15px 0px #6220fb;
+        box-shadow: 1px 3px 15px 0 #6220fb;
+        box-shadow: 1px 3px 15px 0 #6220fb;
+        box-shadow: 1px 3px 15px 0 #6220fb;
 
     }
 
     .side-production {
-        background-image: linear-gradient(90deg, #945b11, #ff9900);
+        background-image: linear-gradient(90deg, #945b11, #f90);
     }
 
     .side-production:hover {
@@ -310,9 +307,9 @@ body {
         transition: all .3s ease-in;
         padding-right: 30px;
         padding-left: 30px;
-        -webkit-box-shadow: 1px 3px 15px 0px #ff9900;
-        -moz-box-shadow: 1px 3px 15px 0px #ff9900;
-        box-shadow: 1px 3px 15px 0px #ff9900;
+        box-shadow: 1px 3px 15px 0 #f90;
+        box-shadow: 1px 3px 15px 0 #f90;
+        box-shadow: 1px 3px 15px 0 #f90;
 
     }
 
@@ -326,7 +323,7 @@ body {
 
     #modalProject .modal-content {
         height: 100% !important;
-        background-color: rgb(0, 0, 0, 0);
+        background-color: rgb(0 0 0 / 0%);
         background-size: contain;
     }
 
@@ -339,8 +336,8 @@ body {
         font-family: 'Archivo Black', sans-serif;
         font-size: 4vh;
         margin: 0;
-        background: rgb(174, 118, 34);
-        background: linear-gradient(164deg, rgba(174, 118, 34, 1) 15%, rgb(255, 255, 255) 48%, rgba(174, 118, 34, 1) 83%);
+        background: rgb(174 118 34);
+        background: linear-gradient(164deg, rgb(174 118 34 / 100%) 15%, rgb(255 255 255) 48%, rgb(174 118 34 / 100%) 83%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -351,7 +348,6 @@ body {
     }
 
     #modalProject .modal-header {
-
         border: none !important;
     }
 
@@ -370,12 +366,10 @@ body {
     }
 
     .slider-left div {
-
         display: none;
     }
 
     .slider-left {
-
         display: block;
         width: 6vw;
     }
@@ -386,16 +380,15 @@ body {
         justify-content: center;
         width: 100vw;
         color: #fff;
-
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-weight: 700 !important;
         font-size: 4vh;
         letter-spacing: 1.1px;
-        background: rgb(255, 255, 255);
-        background: linear-gradient(121deg, rgba(255, 255, 255, 1) 0%, rgba(168, 168, 168, 1) 46%, rgba(255, 255, 255, 1) 100%);
+        background: rgb(255 255 255);
+        background: linear-gradient(121deg, rgb(255 255 255 / 100%) 0%, rgb(168 168 168 / 100%) 46%, rgb(255 255 255 / 100%) 100%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-shadow: -1px -1px 8px rgba(255, 255, 255, 0.3);
+        text-shadow: -1px -1px 8px rgb(255 255 255 / 30%);
 
     }
 
@@ -403,17 +396,17 @@ body {
         margin-left: 5px;
         width: 70vw;
         padding: 10px;
-        background-color: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(102, 0, 153, 0.454);
-        -webkit-backdrop-filter: blur(4px);
+        background-color: rgb(255 255 255 / 2%);
+        border: 1px solid rgb(102 0 153 / 45.4%);
+        backdrop-filter: blur(4px);
         backdrop-filter: blur(4px);
         border-radius: .7rem;
         transition: all ease .3s;
-        box-shadow: 0px 0px 20px 1px #ffbb763f;
+        box-shadow: 0 0 20px 1px #ffbb763f;
     }
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
     .slider-card .box {
         width: 93vw;
     }
@@ -427,8 +420,7 @@ body {
 }
 
 ///CAROUSEL
-@media (min-width: 2px) {
-
+@media (width >= 2px) {
     @keyframes show-up {
         0% {
             opacity: 0;
@@ -446,8 +438,8 @@ body {
     .slick-dots {
         bottom: 100% !important;
 
-        li button:before,
-        li button:before {
+        li button::before,
+        li button::before {
             transition: all 1s;
             background-color: black;
             opacity: 1 !important;
@@ -459,7 +451,7 @@ body {
 
         }
 
-        li.slick-active button:before {
+        li.slick-active button::before {
             opacity: 1 !important;
             background-color: #fff;
         }
@@ -468,6 +460,7 @@ body {
     .slick-arrow {
         display: none !important
     }
+
     .vergz1,
     .vergz2,
     .vergz3,
@@ -485,6 +478,7 @@ body {
         background-size:contain!important;
         background-repeat: no-repeat;
     }
+
     .vergz1 {
         background-image: url("/img/vergs/vergs1.png");
         
@@ -550,7 +544,7 @@ body {
 
     .imgSlider {
         background-size: cover;
-        background-color: #000000;
+        background-color: #000;
         height: 70vh !important;
         width: 50vw !important;
     }
@@ -558,7 +552,7 @@ body {
 
 }
 
-@media (max-width: 890px) {
+@media (width <= 890px) {
     .resize-carousel {
         margin-left: 20px;
     }
@@ -569,7 +563,7 @@ body {
 
     .imgSlider {
         background-size: cover;
-        background-color: #000000;
+        background-color: #000;
         height: 50vh !important;
         width: 100vw !important;
     }

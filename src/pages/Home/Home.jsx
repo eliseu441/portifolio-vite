@@ -22,13 +22,13 @@ function Home() {
         <>
          {isLoading ? <Preloader /> :<> </>}
             <div class='page-home'>
-                <div onClick={e => !profile ? setProfile(!profile) : ''} class={`${profile == true ? 'header' : 'header hideHeader'} d-flex justify-content-center align-items-start row`} id="myHeader" >
+                <div style={{cursor: !profile ? 'pointer' : 'auto'}} onClick={e => !profile ? setProfile(!profile) : ''} class={`${profile == true ? 'side-bio' : 'side-bio hide-side-bio'} d-flex justify-content-center align-items-start row`} id="myHeader" >
 
                     <div class="typer d-flex justify-content-center row mt-3">
                         <img src="/img/bio_icon.jpg" class='icon col-12' alt="" />
                         <div class='col-12 d-flex justify-content-center ms-4 mt-2'>
-                            <div class='col-8 '>
-                                <a href="https://github.com/eliseu441"><img src="https://readme-typing-svg.demolab.com?font=Monsterrat&weight=700&size=22&duration=2000&pause=700&color=F7F7F7&random=false&width=435&lines=I'm+Eliseu;I'm+a+full-stack+dev;I'm+a+designer" alt="Typing SVG" /></a>
+                            <div class='col-10 ms-2'>
+                                <a href="https://github.com/eliseu441"><img src="https://readme-typing-svg.demolab.com?font=Monsterrat&weight=700&size=22&duration=1000&pause=700&color=F7F7F7&random=false&width=435&lines=I'm+Eliseu;I'm+a+full-stack;I'm+a+designer;I'm+a+database-manager" alt="Typing SVG" /></a>
                             </div>
                         </div>
                         <div class='bio d-flex justify-content-center align-items-start row'>
