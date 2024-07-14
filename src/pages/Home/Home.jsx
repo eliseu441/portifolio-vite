@@ -79,7 +79,7 @@ function Home() {
                         <div class='col-12 d-flex justify-content-end'>
                             <button class="Btn" onClick={e => setProfile(!profile)}>
                                 <span class="svgContainer ">
-                                    <a class='curriculum'><span class="tooltiptext">hide</span> <i class="bi bi-arrow-left-circle-fill fs-1 information"></i></a>
+                                    <a class='curriculum'><span class="tooltiptext">hide</span> <i class="bi bi-arrow-left-circle-fill information"></i></a>
 
                                 </span>
                             </button>

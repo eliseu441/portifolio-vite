@@ -766,15 +766,11 @@ overflow: hidden;
 
 
 .information {
-  font-size: 3.3vh;
-  padding-top: 2px;
   background: rgb(252 246 186);
-  background: linear-gradient(112.1deg, rgb(255 115 34) 11.4%, rgb(202 74 0) 70.2%);
-  background-clip: text;
+  background: linear-gradient(112.1deg, rgb(255 115 34) 11.4%, rgb(202 74 0) 70.2%)!important;
+  font-size: 5vh;
+  padding-top: 2px;
+  background-clip: text!important;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
-}
-
-.information:hover{
-  transform: scale(2) !important;
 }
