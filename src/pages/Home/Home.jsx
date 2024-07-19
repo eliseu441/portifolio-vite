@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import { MaquinaDeEscrever } from "./utils/automate.jsx"
+import { MaquinaDeEscrever } from "./utils/automate"
+import { useLanguage } from '../../layout/LanguageProvider/Language.jsx';
+import { portuguese, english } from '../../translate/languages.jsx';
 import Preloader from "../../layout/preLoader/Preloader.jsx";
 import Aos from 'aos';
 
 function Home() {
 
+    const { language, setLanguage } = useLanguage();
     const [profile, setProfile] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-      // callApis()
-      setTimeout(() => {
-        setIsLoading(false);
-        setProfile(!profile);
-      }, 1500);
-      Aos.init({ once: true });
-  }, []);
+        // callApis()
+        setTimeout(() => {
+            setIsLoading(false);
+            setProfile(!profile);
+        }, 1500);
+        Aos.init({ once: true });
+    }, []);
 
 
     return (
         <>
-         {isLoading ? <Preloader /> :<> </>}
+            {isLoading ? <Preloader /> : <> </>}
             <div class='page-home'>
-                <div style={{cursor: !profile ? 'pointer' : 'auto'}} onClick={e => !profile ? setProfile(!profile) : ''} class={`${profile == true ? 'side-bio' : 'side-bio hide-side-bio'} d-flex justify-content-center align-items-start row`} id="myHeader" >
+                <div style={{ cursor: !profile ? 'pointer' : 'auto' }} onClick={e => !profile ? setProfile(!profile) : ''} class={`${profile == true ? 'side-bio' : 'side-bio hide-side-bio'} d-flex justify-content-center align-items-start row`} id="myHeader" >
 
                     <div class="typer d-flex justify-content-center row mt-3">
                         <img src="/img/bio_icon.jpg" class='icon col-12' alt="" />
@@ -33,15 +36,15 @@ function Home() {
                         </div>
                         <div class='bio d-flex justify-content-center align-items-start row'>
                             <div class='d-flex justify-contnt-between bio-info'>
-                                <h5>Age:</h5>
+                                <h5>{language === 'portugues' ? portuguese.home.age : english.home.age}:</h5>
                                 <h5>24</h5>
                             </div>
                             <div class='d-flex col-12 justify-contnt-between bio-info'>
-                                <h5>City:</h5>
+                                <h5>{language === 'portugues' ? portuguese.home.city : english.home.city}:</h5>
                                 <h5>São Paulo</h5>
                             </div>
                             <div class='d-flex justify-contnt-between bio-info'>
-                                <h5>Current Company:</h5>
+                                <h5>{language === 'portugues' ? portuguese.home.company : english.home.company}:</h5>
                                 <h5>Alloha</h5>
                             </div>
 
@@ -71,7 +74,7 @@ function Home() {
                             </button>
                             <button class="Btn">
                                 <span class="svgContainer " >
-                                    <a class='curriculum' href="https://portifolio-2024-lovat.vercel.app/cv/curriculum.pdf"><span class="tooltiptext">CV</span> <i class="bi bi-filetype-pdf ms-2 "></i></a>
+                                    <a class='curriculum' href={`${language === 'portugues' ? "/cv/cv_pt.pdf" : "/cv/curriculum.pdf"}`}><span class="tooltiptext">CV</span> <i class="bi bi-filetype-pdf ms-2 "></i></a>
 
                                 </span>
                             </button>
@@ -79,7 +82,7 @@ function Home() {
                         <div class='col-12 d-flex justify-content-end'>
                             <button class="Btn" onClick={e => setProfile(!profile)}>
                                 <span class="svgContainer ">
-                                    <a class='curriculum'><span class="tooltiptext">hide</span> <i class="bi bi-arrow-left-circle-fill information"></i></a>
+                                    <a class='curriculum'><span class="tooltiptext">hide</span> <i class="bi bi-arrow-left-circle-fill fs-1 information"></i></a>
 
                                 </span>
                             </button>
@@ -88,12 +91,12 @@ function Home() {
 
 
                 </div>
-                <div class='d-flex justify-content-end' data-aos="fade-left"data-aos-duration="1000" data-aos-delay="1000" style={{ zIndex:2, position:"relative" }} >
-                <div class={`${profile == true ? 'col-7 d-flex justify-content-end p-0 m-0' : 'col-11 d-flex justify-content-end p-0 m-0'} `} style={{ transition: 'all 1s'}}>
-                    <div className='card-experiences d-flex align-items-center' >
-                        <span class='title-experience col-sm-10 d-flex justify-content-center m-0 p-0'>EXPERIENCE</span>
+                <div class='d-flex justify-content-end' data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000" style={{ zIndex: 2, position: "relative" }} >
+                    <div class={`${profile == true ? 'col-7 d-flex justify-content-end p-0 m-0' : 'col-11 d-flex justify-content-end p-0 m-0'} `} style={{ transition: 'all 1s' }}>
+                        <div className='card-experiences d-flex align-items-center' >
+                            <span class='title-experience col-sm-10 d-flex justify-content-center m-0 p-0'>{language === 'portugues' ? portuguese.home.title : english.home.title}</span>
 
-                    </div>
+                        </div>
                     </div>
                 </div>
                 <div class="main">
@@ -121,11 +124,8 @@ function Home() {
 
                             >
                                 <h3 className="vertical-timeline-element-title">Start</h3>
-                                <p>
-                                    I was studying computer engineering at <a target="_blank" href="https://unisal.br/" style={{color:'red', fontWeight:'bolder'}}>UNISAL</a> and in parallel a 
-                                    <a target="_blank" href="https://www.udemy.com/certificate/UC-d04360cc-1ecd-41e9-9a66-3d621a79c78a/" > Web Course with JavaScript at Udemy </a> 
-                                     and <a target="_blank" href="https://cursos.alura.com.br/degree/certificate/014f8585-55f1-4422-b0ae-c7e9b0f4bd2a" >ALURA</a>, this gave me the base start projects and api's using react, node and js.
-                                </p>
+
+                                {language === 'portugues' ? portuguese.home.start() : english.home.start()}
                             </VerticalTimelineElement>
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
@@ -137,9 +137,8 @@ function Home() {
 
                             >
                                 <h3 className="vertical-timeline-element-title">Smarkio</h3>
-                                <p>
-                                    Start working on system developments having daily contact with creation of api services using javascript, node, docker, aws s3 and aws logs analisys using lambda.
-                                </p>
+                                {language === 'portugues' ? portuguese.home.smarkio() : english.home.smarkio()}
+
                             </VerticalTimelineElement><VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
                                 contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
@@ -150,11 +149,7 @@ function Home() {
 
                             >
                                 <h3 className="vertical-timeline-element-title">Zenvia</h3>
-                                <p>
-                                    This year i have started some courses to improve my skills, the main ones are 
-                                    <a target="_blank" href="https://cursos.alura.com.br/certificate/7dc99eff-654e-4d74-8e71-96dc0173e4dd" > Rocketseat and Alura </a>
-                                      courses with focus on back-end development using javascript and  database structures knowledge like <a target="_blank" href="https://cursos.alura.com.br/certificate/eliseu-silva4/microsoft-sql-server-2022-consultas-avancadas" >PL/SQL </a>.
-                                </p>
+                                {language === 'portugues' ? portuguese.home.zenvia() : english.home.zenvia()}
                             </VerticalTimelineElement><VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
                                 contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
@@ -165,9 +160,7 @@ function Home() {
 
                             >
                                 <h3 className="vertical-timeline-element-title">Vivo</h3>
-                                <p>
-                                    I was hired at vivo, by far this is where I gained more knowledge, not just as a developer but as a project designer, infrastructure maintenance, databases creation and maintenance, physical servers, cloud server deployments and more.
-                                </p>
+                                {language === 'portugues' ? portuguese.home.vivo() : english.home.vivo()}
                             </VerticalTimelineElement>
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
@@ -178,13 +171,10 @@ function Home() {
                                 icon={<h3 style={{ margin: 'auto' }}>5</h3>}
 
                             >
-                                <h3 className="vertical-timeline-element-title">Vivo project</h3>
-                                <p>
-                                    At vivo my main case was called  "sites-fibrados", this system was made to migrate a legacy project into new technologies, unify different areas into a new database to solve 
-                                    incongruity of informations, new business rules to a workflow system and many other features, I headed this project from the scratch and made all the code implementations like deploys, database structures, firewall exceptions and more...
-                                </p>
+                                <h3 className="vertical-timeline-element-title">{language === 'portugues' ? 'Principal projeto vivo' : 'Main project vivo'}</h3>
+                                {language === 'portugues' ? portuguese.home.fibrados() : english.home.fibrados()}
                             </VerticalTimelineElement>
-                            
+
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
                                 contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
@@ -195,9 +185,7 @@ function Home() {
 
                             >
                                 <h3 className="vertical-timeline-element-title">Alloha</h3>
-                                <p>
-                                    At alloha i've working with a legacy project made in node, angular, vite, docker, mysql(5.6), php and some old tech's, my job is about maintenance this service and analize troubletickets finding solutions for bugs.
-                                </p>
+                                {language === 'portugues' ? portuguese.home.alloha() : english.home.alloha()}
                             </VerticalTimelineElement>
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
@@ -208,15 +196,14 @@ function Home() {
                                 icon={<h3 style={{ margin: 'auto' }}>6</h3>}
 
                             >
-                                <h3 className="vertical-timeline-element-title">Now</h3>
-                                <p>
-                                    besides my job i'm working on some projects to improve my skills and know more ways to deal with problems involving techs like db, etl, infra and code troubles, i've made many solutions(in many lang's like rust, c#, js, ts) and deployed them on amazon ec2, eds(postgres-db), google cloud vm's and digital ocean vm's, this gave me a lot about devops operations, you can contact me to acess this servers for analisys.
-                                </p>
+                                <h3 className="vertical-timeline-element-title">{language === 'portugues' ? 'Agora' : 'Now'}</h3>
+                                {language === 'portugues' ? portuguese.home.now() : english.home.now()}
+                       
                             </VerticalTimelineElement>
                         </VerticalTimeline>
                     </div>
                 </div>
-                
+
             </div>
         </>
     )
