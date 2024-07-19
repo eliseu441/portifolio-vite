@@ -23,6 +23,10 @@ export default function Header({ variant }) {
       }
     });
   }, []);
+  useEffect(() => {
+    console.log('language', language);
+  }, [language]);
+
 
 
 
