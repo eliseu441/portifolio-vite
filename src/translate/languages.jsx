@@ -3,7 +3,7 @@ const portuguese = {
     header:{
         home: "INICIO",
         projects: "PROJETOS",
-        repos: "REPOSITORIOS"
+        repos: "REPOS"
     },
     home:{
         age: "Idade",
@@ -46,7 +46,7 @@ const english = {
     header:{
         home: "HOME",
         projects: "PROJECTS",
-        repos: "REPOSITORIES"
+        repos: "REPOS"
     },
     home:{
         age: "Age",
