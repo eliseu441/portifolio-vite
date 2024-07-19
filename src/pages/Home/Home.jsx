@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { MaquinaDeEscrever } from "./utils/automate"
-import { portuguese, english } from '../../translate/languages.js';
+import { useLanguage } from '../../layout/LanguageProvider/Language.jsx';
+import { portuguese, english } from '../../translate/languages.jsx';
 import Preloader from "../../layout/preLoader/Preloader.jsx";
 import Aos from 'aos';
 
 function Home() {
 
+    const { language, setLanguage } = useLanguage();
     const [profile, setProfile] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
@@ -34,15 +36,15 @@ function Home() {
                         </div>
                         <div class='bio d-flex justify-content-center align-items-start row'>
                             <div class='d-flex justify-contnt-between bio-info'>
-                                <h5>Age:</h5>
+                                <h5>{language === 'portugues' ? portuguese.home.age : english.home.age}:</h5>
                                 <h5>24</h5>
                             </div>
                             <div class='d-flex col-12 justify-contnt-between bio-info'>
-                                <h5>City:</h5>
+                                <h5>{language === 'portugues' ? portuguese.home.city : english.home.city}:</h5>
                                 <h5>São Paulo</h5>
                             </div>
                             <div class='d-flex justify-contnt-between bio-info'>
-                                <h5>Current Company:</h5>
+                                <h5>{language === 'portugues' ? portuguese.home.company : english.home.company}:</h5>
                                 <h5>Alloha</h5>
                             </div>
 
@@ -92,7 +94,7 @@ function Home() {
                 <div class='d-flex justify-content-end' data-aos="fade-left"data-aos-duration="1000" data-aos-delay="1000" style={{ zIndex:2, position:"relative" }} >
                 <div class={`${profile == true ? 'col-7 d-flex justify-content-end p-0 m-0' : 'col-11 d-flex justify-content-end p-0 m-0'} `} style={{ transition: 'all 1s'}}>
                     <div className='card-experiences d-flex align-items-center' >
-                        <span class='title-experience col-sm-10 d-flex justify-content-center m-0 p-0'>EXPERIENCE</span>
+                        <span class='title-experience col-sm-10 d-flex justify-content-center m-0 p-0'>{language === 'portugues' ? portuguese.home.title : english.home.title}</span>
 
                     </div>
                     </div>
@@ -122,11 +124,8 @@ function Home() {
 
                             >
                                 <h3 className="vertical-timeline-element-title">Start</h3>
-                                <p>
-                                    I was studying computer engineering at <a target="_blank" href="https://unisal.br/" style={{color:'red', fontWeight:'bolder'}}>UNISAL</a> and in parallel a 
-                                    <a target="_blank" href="https://www.udemy.com/certificate/UC-d04360cc-1ecd-41e9-9a66-3d621a79c78a/" > Web Course with JavaScript at Udemy </a> 
-                                     and <a target="_blank" href="https://cursos.alura.com.br/degree/certificate/014f8585-55f1-4422-b0ae-c7e9b0f4bd2a" >ALURA</a>, this gave me the base start projects and api's using react, node and js.
-                                </p>
+                                
+                                {language === 'portugues' ? portuguese.home.start() : english.home.start()}
                             </VerticalTimelineElement>
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--teste"

@@ -5,7 +5,7 @@ import { useLanguage } from '../LanguageProvider/Language.jsx';
 import SocialWidget from '../Widget/SocialWidget';
 import './header.css';
 import ContactInfoWidget from '../Widget/ContactInfoWidget';
-import { portuguese, english } from '../../translate/languages.js';
+import { portuguese, english } from '../../translate/languages.jsx';
 
 
 
@@ -23,9 +23,6 @@ export default function Header({ variant }) {
       }
     });
   }, []);
-  useEffect(() => {
-    console.log('language', language);
-  }, [language]);
 
 
 
