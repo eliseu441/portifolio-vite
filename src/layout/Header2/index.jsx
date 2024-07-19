@@ -1,13 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { DropdownList } from 'react-widgets';
+import { useLanguage } from '../LanguageProvider/Language.jsx';
 import SocialWidget from '../Widget/SocialWidget';
 import './header.css';
 import ContactInfoWidget from '../Widget/ContactInfoWidget';
+import { portuguese, english } from '../../translate/languages.js';
+
+
 
 export default function Header({ variant }) {
   const [isSticky, setIsSticky] = useState(false);
   const [sideHeaderToggle, setSideHeaderToggle] = useState(false);
   const [mobileToggle, setMobileToggle] = useState(false);
+  const { language, setLanguage } = useLanguage();
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 0) {
@@ -17,37 +23,51 @@ export default function Header({ variant }) {
       }
     });
   }, []);
+  useEffect(() => {
+    console.log('language', language);
+  }, [language]);
+
+
+
 
   return (
     <>
       <header
-        className={`cs-site_header cs-style1 text-uppercase ${
-          variant ? variant : ''
-        } cs-sticky_header ${isSticky ? 'cs-sticky_header_active' : ''}`}
+        className={`cs-site_header cs-style1 text-uppercase ${variant ? variant : ''
+          } cs-sticky_header ${isSticky ? 'cs-sticky_header_active' : ''}`}
       >
         <div className="cs-main_header">
           <div className="">
             <div className="cs-main_header_in">
               <div className="cs-main_header_left">
+                <div className='combo-sidebar col-12 ms-5'>
+                  <DropdownList
+                    defaultValue={language}
+                    data={['portugues', 'english']}
+                    textField='name'
+                    onChange={(value) => setLanguage(value)}
+                  />
+                </div>
               </div>
               <div className="cs-main_header_center">
                 <div className="cs-nav cs-primary_font cs-medium">
+
                   <ul
                     className="cs-nav_list"
                     style={{ display: `${mobileToggle ? 'block' : 'none'}` }}
                   >
                     <li className="menu-item">
                       <NavLink to="/" onClick={() => setMobileToggle(false)}>
-                        Home
+                        {language === 'portugues' ? portuguese.home : english.home}
                       </NavLink>
-                      
+
                     </li>
                     <li>
                       <NavLink
                         to="projects"
                         onClick={() => setMobileToggle(false)}
                       >
-                        Projects
+                        {language === 'portugues' ? portuguese.projects : english.projects}
                       </NavLink>
                     </li>
                     <li>
@@ -55,11 +75,11 @@ export default function Header({ variant }) {
                         to="repos"
                         onClick={() => setMobileToggle(false)}
                       >
-                        Repos
+                        {language === 'portugues' ? portuguese.repos : english.repos}
                       </NavLink>
                     </li>
-                    
-                    
+
+
                   </ul>
                   <span
                     className={
@@ -74,7 +94,7 @@ export default function Header({ variant }) {
                 </div>
               </div>
               <div className="cs-main_header_right">
-                
+
                 <div className="cs-toolbox me-5">
                   <span
                     className="cs-icon_btn"

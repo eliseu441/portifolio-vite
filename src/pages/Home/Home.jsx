@@ -71,7 +71,7 @@ function Home() {
                             </button>
                             <button class="Btn">
                                 <span class="svgContainer " >
-                                    <a class='curriculum' href="https://portifolio-2024-lovat.vercel.app/cv/curriculum.pdf"><span class="tooltiptext">CV</span> <i class="bi bi-filetype-pdf ms-2 "></i></a>
+                                    <a class='curriculum' href="/cv/curriculum.pdf"><span class="tooltiptext">CV</span> <i class="bi bi-filetype-pdf ms-2 "></i></a>
 
                                 </span>
                             </button>
