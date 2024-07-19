@@ -58,7 +58,7 @@ export default function Header({ variant }) {
                   >
                     <li className="menu-item">
                       <NavLink to="/" onClick={() => setMobileToggle(false)}>
-                        {language === 'portugues' ? portuguese.home : english.home}
+                        {language === 'portugues' ? portuguese.header.home : english.header.home}
                       </NavLink>
 
                     </li>
@@ -67,7 +67,7 @@ export default function Header({ variant }) {
                         to="projects"
                         onClick={() => setMobileToggle(false)}
                       >
-                        {language === 'portugues' ? portuguese.projects : english.projects}
+                        {language === 'portugues' ? portuguese.header.projects : english.header.projects}
                       </NavLink>
                     </li>
                     <li>
@@ -75,7 +75,7 @@ export default function Header({ variant }) {
                         to="repos"
                         onClick={() => setMobileToggle(false)}
                       >
-                        {language === 'portugues' ? portuguese.repos : english.repos}
+                        {language === 'portugues' ? portuguese.header.repos : english.header.repos}
                       </NavLink>
                     </li>
 

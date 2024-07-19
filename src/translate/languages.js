@@ -1,13 +1,18 @@
 const portuguese = {
-    home: "INICIO",
-    projects: "PROJETOS",
-    repos: "REPOSITORIOS"
+   
+    header:{
+        home: "INICIO",
+        projects: "PROJETOS",
+        repos: "REPOSITORIOS"
+    }
 };
 
 const english = {
-    home: "HOME",
-    projects: "PROJECTS",
-    repos: "REPOSITORIES"
+    header:{
+        home: "HOME",
+        projects: "PROJECTS",
+        repos: "REPOSITORIES"
+    }
 };
 
 export { portuguese, english };

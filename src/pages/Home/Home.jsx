@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { MaquinaDeEscrever } from "./utils/automate"
+import { portuguese, english } from '../../translate/languages.js';
 import Preloader from "../../layout/preLoader/Preloader.jsx";
 import Aos from 'aos';
 
