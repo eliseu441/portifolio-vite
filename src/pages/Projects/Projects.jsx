@@ -135,13 +135,11 @@ function Projects() {
                                                     Live Preview
                                                 </button>
                                             </Link>
-                                            <Link to={projeto == 1 ? linkVergz: projeto == 2 ? linkThiago : linkHermes}target="_blank">
                                                 <button class='button-desc side-production p-2'
                                                     data-bs-toggle="modal" data-bs-target="#modalProject"
                                                 >
                                                    Description
                                                 </button>
-                                            </Link>
                                         </div>
 
                                     
@@ -174,14 +172,14 @@ function Projects() {
                         <div class="modal-content">
                             <div class="modal-header">
                             <p className="col-11">
-                                description
+                                VERGZ TATTOO
                                </p>
                                <button type="button" class="btn-close btn-close-white"data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
 
-                            <div class='modal-body p-1'>
+                            <div class='modal-body pe-5 ps-5'>
                                <h1>
-                                description
+                                {projeto}
                                </h1>
                             </div>
 

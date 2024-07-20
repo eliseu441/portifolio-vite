@@ -294,10 +294,10 @@ body {
 
     #modalProject .modal-content {
         height: 100% !important;
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 2px solid rgb(255, 72, 0);
         background-size: contain;
     }
-
     #modalProject .modal-header p {
         color: #f5f5f5;
         display: flex;
@@ -305,7 +305,7 @@ body {
         align-items: center;
         padding-left: 5vw;
         font-family: 'Archivo Black', sans-serif;
-        font-size: 3rem;
+        font-size: 2rem;
         margin: 0;
         background: rgb(174 118 34);
         background: linear-gradient(164deg, rgb(174 118 34 / 100%) 15%, rgb(255 255 255) 48%, rgb(174 118 34 / 100%) 83%);
@@ -314,7 +314,7 @@ body {
     }
     #modalProject .modal-header button {
         font-size: 2rem;
-        
+        color: white!important;
     }
 
     .project-info-modal {
