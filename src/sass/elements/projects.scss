@@ -297,6 +297,15 @@ body {
         background-color: rgba(0, 0, 0, 0.6);
         border: 2px solid rgb(255, 72, 0);
         background-size: contain;
+        box-shadow: 0 0 20px 1px #ffbb7696;
+        
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+    }
+    #modalProject .modal-body p{
+        font-family: Montserrat, sans-serif;
+        font-size: 1.7rem;
+        text-align: center;
     }
     #modalProject .modal-header p {
         color: #f5f5f5;
@@ -373,7 +382,6 @@ body {
         padding: 10px;
         background-color: rgba(0, 0, 0, 0.6);
         border: 1px solid rgb(217 61 0 / 45.4%);
-        backdrop-filter: blur(4px);
         backdrop-filter: blur(4px);
         border-radius: .7rem;
         transition: all ease .3s;

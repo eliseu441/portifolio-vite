@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
+import { useLanguage } from '../../layout/LanguageProvider/Language.jsx';
+import { portuguese, english } from '../../translate/languages.jsx';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,12 +21,11 @@ const settings = {
 
 
 function Projects() {
+    const { language, setLanguage } = useLanguage();
     const [loading, setLoading] = useState(true);
     const [projeto, setProjeto] = useState(1);
     const [nomeProjeto, setNomeProjeto] = useState('vergz');
-    const [description, setDescription] = useState('TESTE');
-
-
+    const [description, setDescription] = useState('');
     const [profile, setProfile] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
@@ -33,7 +34,11 @@ function Projects() {
             setIsLoading(false);
         }, 1500);
         Aos.init({ once: true });
+        setDescription(language === 'portugues' ? portuguese.descriptions : english.descriptions)
     }, []);
+    useEffect(() => {
+        setDescription(language === 'portugues' ? portuguese.descriptions : english.descriptions)
+    }, [language]);
 
     useEffect(() => {
         // callApis()
@@ -172,15 +177,15 @@ function Projects() {
                         <div class="modal-content">
                             <div class="modal-header">
                             <p className="col-11">
-                                VERGZ TATTOO
+                            {projeto == 1 ? 'VERGZ-TATTOO' : projeto == 2 ? 'ADV-THIAGO' : 'HERMES-PROJECT'}
                                </p>
                                <button type="button" class="btn-close btn-close-white"data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
 
-                            <div class='modal-body pe-5 ps-5'>
-                               <h1>
-                                {projeto}
-                               </h1>
+                            <div class='modal-body pe-5 ps-5 mt-5'>
+                               <p >
+                               {projeto == 1 ? description.vergs : projeto == 2 ? description.thiago : description.hermes}
+                               </p>
                             </div>
 
                         </div>

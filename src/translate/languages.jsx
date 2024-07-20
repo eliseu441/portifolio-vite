@@ -39,6 +39,12 @@ const portuguese = {
             , projetos para aprimorar minhas habilidades e conhecer mais formas de lidar com problemas envolvendo tecnologias como databases, etl, infra e problemas de código, fiz muitas soluções (em muitas linguagens como rust, c#, js, ts) e fiz o deploy em plataformas como amazon ec2, eds(utilizando postgres), google cloud vm's e digital ocean vm's, isso tem me dado muito conhecimento sobre operações devops.
         </p>)
         
+    },
+    descriptions:{
+   
+        vergs:'Vergs-tattoo foi um site criado para um estudio de tatuagem, o site foi feito com react, scss, javascript, o foco principal é a responsividade e a facilidade de uso, o site tem facilidades como o sistema de agendamento de tatuagens integrado a api de whatsapp e api de localização do google.',
+        thiago:'Thiago-adv foi um site criado para um advogado, o site foi feito com react, scss, javascript, o modelo segue a linha de landing-page com foco na maxima apresentação de informaçoes em uma pagina que também possibilita o encaminhamento ao profissional',
+        hermes:'Hermes-project foi um projeto pessoal para portifolio, iniialmente o projeto foi feito em javascript, react, express e sql-server como banco porém agora esta sendo refatorado inteiramente para typescript tanto front-end como back-end, apis em nest, postgres como banco de dados hospedado na amazon eds.'
     }
 };
 
@@ -83,6 +89,12 @@ const english = {
             <a target="_blank" href="https://www.udemy.com/certificate/UC-8c9176e6-4bc7-4d5e-a85b-a15192baf0e7/" > C# Object-oriented programming </a>
             , i'm working on some projects to improve my skills and know more ways to deal with problems involving techs like db, etl, infra and code troubles, i've made many solutions(in many lang's like rust, c#, js, ts) and deployed them on amazon ec2, eds(postgres-db), google cloud vm's and digital ocean vm's, this gave me a lot about devops operations.
         </p>)
+    },
+    descriptions:{
+   
+        vergs:'Vergz-tattoo is a site created for a tattoo studio, the site was made with react, scss, javascript, the main focus is the responsiveness and ease of use, the site has facilities like the tattoo scheduling system integrated with the whatsapp api and the google location api.',
+        thiago:'Thiago-adv was a site created for a lawyer, the site was made with react, scss, javascript, the model follows the landing-page line with a focus on maximum presentation of information on a page that also allows the user to schedule with the professional',
+        hermes:'Hermes-project was a personal project for portfolio, initially the project was made in javascript, react, express and sql-server as a database but now it is being entirely refactored to typescript both front-end and back-end, apis in nest, postgres as a database hosted on amazon eds.'
     }
 };
 
