@@ -60,15 +60,6 @@ body {
 
     }
 
-    .slider_nav .icon {
-        width: 50px;
-        height: 50px;
-        display: block;
-        border: 2px solid rgb(255 255 255 / 50%);
-        background-color: #750099;
-        position: relative;
-        border-radius: 100%;
-    }
 
     .slider_nav .fn__svg {
         display: block;
@@ -113,10 +104,11 @@ body {
     .project-images {}
 
 
-
+    .default-project{
+        background-size: cover;
+    }
     .parallax-wrap {
         z-index: 0;
-        background-color: #000;
         position: fixed;
         height: 100vh;
         width: 100vw;
@@ -128,36 +120,15 @@ body {
 
     .parallax-wrap img {
         position: absolute;
-        height: 20vh;
-        width: 20vh;
-        border-radius: 100%;
         z-index: 1;
     }
 
     .parallax-wrap img:nth-child(1) {
-        top: 70%;
-        left: 80%;
-        z-index: 1;
-    }
-
-    .parallax-wrap img:nth-child(2) {
-        top: 20%;
-        left: 80%;
-    }
-
-    .parallax-wrap img:nth-child(3) {
-        top: 40%;
-        left: 15%;
-    }
-
-    .parallax-wrap img:nth-child(4) {
-        top: 90%;
-        left: 40%;
-    }
-
-    .parallax-wrap img:nth-child(5) {
-        top: 15%;
-        left: 30%;
+        top: 0%;
+        left: -5vw;
+        height: 110vh;
+        width: 110vw;
+        clip-path: polygon(35% 0, 65% 0, 100% 50%, 65% 100%, 35% 100%, 0% 50%);
     }
 
     .page-projects .title {
@@ -394,10 +365,10 @@ body {
 
     .slider-card .box {
         margin-left: 5px;
-        width: 70vw;
+        width: 60vw;
         padding: 10px;
-        background-color: rgb(255 255 255 / 2%);
-        border: 1px solid rgb(102 0 153 / 45.4%);
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgb(217 61 0 / 45.4%);
         backdrop-filter: blur(4px);
         backdrop-filter: blur(4px);
         border-radius: .7rem;
@@ -414,9 +385,6 @@ body {
     .page-projects .project-subtitle {
         display: none !important;
     }
-
-
-
 }
 
 ///CAROUSEL
@@ -443,7 +411,7 @@ body {
             transition: all 1s;
             background-color: black;
             opacity: 1 !important;
-            border: 2px solid #fb00ff;
+            border: 2px solid rgb(217 61 0);
             border-radius: 50%;
             display: inline-block;
             height: 12px;
@@ -474,8 +442,8 @@ body {
     .hermes3,
     .hermes4{
         transition: all 1s;
-        background-position: center!important;
-        background-size:contain!important;
+        background-position: center center;
+        background-size:cover!important;
         background-repeat: no-repeat;
     }
 
@@ -501,51 +469,41 @@ body {
 
     .thiago1 {
         background-image: url('/img/thiago_adv/th1.png');
-        
     }
 
     .thiago2 {
         background-image: url('/img/thiago_adv/th2.png');
-        
     }
 
     .thiago3 {
         background-image: url('/img/thiago_adv/th3.png');
-        
     }
 
     .thiago4 {
         background-image: url('/img/thiago_adv/th2.png');
-        
     }
 
     .hermes1 {
         background-image: url("/img/hermes/hr1.png");
-        
     }
 
     .hermes2 {
         background-image: url("/img/hermes/hr2.png");
-        
     }
 
     .hermes3 {
         background-image: url("/img/hermes/hr3.png");
-        
     }
 
     .hermes4 {
         background-image: url("/img/hermes/hr4.png");
-        
-       
     }
 
 
 
     .imgSlider {
-        background-size: cover;
-        background-color: #000;
-        height: 70vh !important;
+        background-color: rgb(0, 0, 0, 0);
+        height: 55vh !important;
         width: 50vw !important;
     }
 

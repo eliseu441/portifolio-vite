@@ -4,11 +4,7 @@ import { Icon } from '@iconify/react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import bg1 from './img/parallax_effect/bubble1.png';
-import bg2 from './img/parallax_effect/bubble2.png';
-import bg3 from './img/parallax_effect/bubble3.png';
-import bg4 from './img/parallax_effect/bubble4.png';
-import bg5 from './img/parallax_effect/bubble5.png';
+import bg5 from '/img/bg_home.jpg';
 import Preloader from "../../layout/preLoader/Preloader.jsx";
 import Aos from 'aos';
 const settings = {
@@ -31,12 +27,12 @@ function Projects() {
     const [profile, setProfile] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-      // callApis()
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1500);
-      Aos.init({ once: true });
-  }, []);
+        // callApis()
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
+        Aos.init({ once: true });
+    }, []);
 
     useEffect(() => {
         // callApis()
@@ -86,22 +82,18 @@ function Projects() {
 
     return (
         <>
-         {isLoading ? <Preloader /> :<> </>} 
+            {isLoading ? <Preloader /> : <> </>}
             <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-       
-            <div class='default-project'>
+
+            <div class='default-project' style={{ backgroundImage: 'url(./img/bg_home.jpg)' }}>
                 <div class="parallax-wrap" data-aos="zoom-in" data-aos-duration="1000">
-                    <img value="-15" src={bg5} />
-                    <img value="5" src={bg2} />
-                    <img value="30" src={bg3} />
-                    <img value="-5" src={bg4} />
-                    <img value="15" src={bg1} />
+                    <img value="4" src={bg5} />
                 </div>
                 <div class='bg-projects '>
                 </div>
 
                 <div class='page-projects row' >
-                    
+
 
                     <div class='title mt-3' data-aos="fade-left" data-aos-duration="1000"><span>PROJECTS</span></div>
 
@@ -109,25 +101,26 @@ function Projects() {
                         <div class='row d-flex justify-content-center'>
 
 
-                            <p class={projeto == 1 ? 'vergs-tattoo' : projeto == 2 ? 'thiago-adv' : 'hermes-project'}>
 
-                                <Icon icon="bxs:left-arrow"
-                                    class='icon-projects'
-                                    onClick={e => getProjeto(projeto - 1)}
-                                    style={{ display: projeto > 1 ? 'inline' : 'none' }}
-                                />
-
-                                {projeto == 1 ? 'VERGZ TATTOO' : projeto == 2 ? 'ADV THIAGO' : 'HERMES PROJECT'}
-
-                                <Icon icon="bxs:right-arrow"
-                                    class='icon-projects'
-                                    onClick={e => getProjeto(projeto + 1)}
-                                    style={{ display: projeto < 3 ? 'inline' : 'none' }}
-                                />
-                            </p>
 
                             <div class="slider-card col-12 d-flex justify-content-center ">
                                 <div class="box row justify-content-center">
+                                    <p class={projeto == 1 ? 'vergs-tattoo' : projeto == 2 ? 'thiago-adv' : 'hermes-project'}>
+
+                                        <Icon icon="bxs:left-arrow"
+                                            class='icon-projects'
+                                            onClick={e => getProjeto(projeto - 1)}
+                                            style={{ display: projeto > 1 ? 'inline' : 'none' }}
+                                        />
+
+                                        {projeto == 1 ? 'VERGZ TATTOO' : projeto == 2 ? 'ADV THIAGO' : 'HERMES PROJECT'}
+
+                                        <Icon icon="bxs:right-arrow"
+                                            class='icon-projects'
+                                            onClick={e => getProjeto(projeto + 1)}
+                                            style={{ display: projeto < 3 ? 'inline' : 'none' }}
+                                        />
+                                    </p>
                                     {projeto !== 3 ? <div style={{ display: 'block' }}>
                                         <button class='button-desc side-infos'
                                             data-bs-toggle="modal" data-bs-target="#modalProject"

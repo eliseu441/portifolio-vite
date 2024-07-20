@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import colunas from './repos.js';
+
 
 function Repos() {
 
@@ -73,11 +75,13 @@ function Repos() {
                                     {currentItems.map((item) => (
                                         <tr key={item.id}>
                                             <td>
+                                            <Link to={`${item.link}`} target="_blank"  >
                                                 <div className='d-flex justify-content-center'>
                                                     <a class='curriculum'>
                                                         <i class="bi bi-github  information"></i>
                                                     </a>
                                                 </div>
+                                                </Link>
                                             </td>
                                             <td>{item.name}</td>
                                             <td>{item.languages}</td>
