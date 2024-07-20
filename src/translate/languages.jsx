@@ -42,8 +42,8 @@ const portuguese = {
     },
     descriptions:{
    
-        vergs:'Vergs-tattoo foi um site criado para um estudio de tatuagem, o site foi feito com react, scss, javascript, o foco principal é a responsividade e a facilidade de uso, o site tem facilidades como o sistema de agendamento de tatuagens integrado a api de whatsapp e api de localização do google.',
-        thiago:'Thiago-adv foi um site criado para um advogado, o site foi feito com react, scss, javascript, o modelo segue a linha de landing-page com foco na maxima apresentação de informaçoes em uma pagina que também possibilita o encaminhamento ao profissional',
+        vergs:'Vergs-tattoo foi um site criado para um estudio de tatuagem, o site foi feito com react, scss e javascript, o foco principal é a responsividade e a facilidade de uso, o site tem facilidades como o sistema de agendamento de tatuagens integrado a api de whatsapp e api de localização do google.',
+        thiago:'Thiago-adv foi um site criado para um advogado, o site foi feito com react, scss e javascript, o modelo segue a linha de landing-page com foco na maxima apresentação de informaçoes em uma pagina que também possibilita o encaminhamento ao profissional',
         hermes:'Hermes-project foi um projeto pessoal para portifolio, iniialmente o projeto foi feito em javascript, react, express e sql-server como banco porém agora esta sendo refatorado inteiramente para typescript tanto front-end como back-end, apis em nest, postgres como banco de dados hospedado na amazon eds.'
     }
 };
@@ -92,9 +92,9 @@ const english = {
     },
     descriptions:{
    
-        vergs:'Vergz-tattoo is a site created for a tattoo studio, the site was made with react, scss, javascript, the main focus is the responsiveness and ease of use, the site has facilities like the tattoo scheduling system integrated with the whatsapp api and the google location api.',
+        vergs:'Vergz-tattoo is a site created for a tattoo studio, the site was made with react, scss and javascript, the main focus is the responsiveness and ease of use, the site has facilities like the tattoo scheduling system integrated with the whatsapp api and the google location api.',
         thiago:'Thiago-adv was a site created for a lawyer, the site was made with react, scss, javascript, the model follows the landing-page line with a focus on maximum presentation of information on a page that also allows the user to schedule with the professional',
-        hermes:'Hermes-project was a personal project for portfolio, initially the project was made in javascript, react, express and sql-server as a database but now it is being entirely refactored to typescript both front-end and back-end, apis in nest, postgres as a database hosted on amazon eds.'
+        hermes:'Hermes-project was a personal project for portfolio, initially the project was made in javascript, react, express and sql-server as database but now it is being entirely refactored to typescript both front-end and back-end, apis in nest, postgres as database hosted on amazon eds.'
     }
 };
 
