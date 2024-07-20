@@ -3,9 +3,16 @@
 const colunas = [
     {
         "link":'https://github.com/eliseu441/hermes-nest',
-        "id": 1,
+        "id": 0,
         "name": "hermes-nest",
         "languages": "nest.js, aws eds, vite, postgres, next.js, typescript, javascript, axios, bootstrap, scss",
+        "data": "2024"
+    },
+    {
+        "link":'https://github.com/eliseu441/portifolio_vergz2',
+        "id": 1,
+        "name": "portifolio_vergz2",
+        "languages": "javascript, css, scss, react, bootstrap",
         "data": "2024"
     },
     {
