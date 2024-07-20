@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bg5 from '/img/bg_home.jpg';
 import Preloader from "../../layout/preLoader/Preloader.jsx";
+import CustomPaging from "./Slider.jsx";
 import Aos from 'aos';
 const settings = {
     dots: true,
@@ -42,7 +43,12 @@ function Projects() {
         setLoading(false)
     }, [projeto]);
 
-    const linkHermes = 'https://hermesproject-sql-server.onrender.com/'
+    
+
+
+
+
+    const linkHermes = 'https://www.hermesarts.com.br/'
     const linkVergz = 'https://portifolio-vergz2.vercel.app/'
     const linkThiago = 'https://adv-thiago-conde.vercel.app/'
 
@@ -121,33 +127,26 @@ function Projects() {
                                             style={{ display: projeto < 3 ? 'inline' : 'none' }}
                                         />
                                     </p>
-                                    {projeto !== 3 ? <div style={{ display: 'block' }}>
-                                        <button class='button-desc side-infos'
-                                            data-bs-toggle="modal" data-bs-target="#modalProject"
-                                            onClick={e => setDescription(projeto == 1 ? linkVergz : linkThiago)}
-                                        >
-                                            Live Preview
-                                        </button>
-                                    </div> :
                                         <div style={{ display: 'block' }}>
-                                            <Link to="https://www.hermesarts.com.br/" >
+                                            <Link to={projeto == 1 ? linkVergz: projeto == 2 ? linkThiago : linkHermes}target="_blank">
                                                 <button class='button-desc side-infos'
                                                     data-bs-toggle="modal" data-bs-target="#modalProject"
-
                                                 >
-                                                    Live Previeww
+                                                    Live Preview
+                                                </button>
+                                            </Link>
+                                            <Link to={projeto == 1 ? linkVergz: projeto == 2 ? linkThiago : linkHermes}target="_blank">
+                                                <button class='button-desc side-production p-2'
+                                                    data-bs-toggle="modal" data-bs-target="#modalProject"
+                                                >
+                                                   Description
                                                 </button>
                                             </Link>
                                         </div>
 
-                                    }
-                                    <div class='resize-carousel col-sm-6  mt-5'>
-                                        <Slider {...settings}>
-                                            <div class={`imgSlider ${projeto == 1 ? 'vergz' : projeto == 2 ? 'thiago' : 'hermes'}1 `} />
-                                            <div class={`imgSlider ${projeto == 1 ? 'vergz' : projeto == 2 ? 'thiago' : 'hermes'}2 `} />
-                                            <div class={`imgSlider ${projeto == 1 ? 'vergz' : projeto == 2 ? 'thiago' : 'hermes'}3 `} />
-                                            <div class={`imgSlider ${projeto == 1 ? 'vergz' : projeto == 2 ? 'thiago' : 'hermes'}4 `} />
-                                        </Slider>
+                                    
+                                    <div class='resize-carousel col-sm-10  mt-4 mb-4'>
+                                    <CustomPaging projectid={projeto}></CustomPaging>
                                     </div>
                                 </div>
                             </div>
@@ -174,13 +173,16 @@ function Projects() {
 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="btn-close btn-close-white" id="closeCircuito" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <p className="col-11">
+                                description
+                               </p>
+                               <button type="button" class="btn-close btn-close-white"data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
 
                             <div class='modal-body p-1'>
-                                <div>
-                                    <iframe class='project-info-modal' src={description} title="description"></iframe>
-                                </div>
+                               <h1>
+                                description
+                               </h1>
                             </div>
 
                         </div>
