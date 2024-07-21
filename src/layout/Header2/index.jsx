@@ -23,12 +23,9 @@ export default function Header({ variant }) {
     });
   }, []);
   useEffect(() => {
-    console.log('theme', theme);
+    
+
   }, [language, theme]);
-
-
-
-
 
   return (
     <>

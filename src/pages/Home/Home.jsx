@@ -18,7 +18,7 @@ function Home() {
         }, 1500);
         Aos.init({ once: true });
     }, []);
-    const bg_home = theme == false ? { backgroundImage: "url('/img/bg_home.jpg')"} : { backgroundImage: "url('/img/background-white.png')", opacity:'0.9'  }
+    const bg_home = theme == false ? { backgroundImage: "url('/img/bg_home.jpg')"} : { backgroundImage: "url('/img/background-white.png')", opacity:'1'  }
     const card_timeline = theme == false ? { background: 'rgb(0, 0, 0)', color: '#fff' } : { background: 'white', color: 'black' }
     const experienceBg = theme == false ?
         {
