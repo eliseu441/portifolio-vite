@@ -106,7 +106,7 @@ function Projects() {
                 <div class='page-projects row' >
 
 
-                    <div class='title mt-3' data-aos="fade-left" data-aos-duration="1000"><span>PROJECTS</span></div>
+                    <div class='title mt-0' data-aos="fade-left" data-aos-duration="1000"><span>PROJECTS</span></div>
 
                     <div class='carousel-vergs d-flex-justify-content-center mt-2' data-aos="fade-right" data-aos-duration="1000" data-aos-delay="2000" >
                         <div class='row d-flex justify-content-center'>
@@ -116,7 +116,7 @@ function Projects() {
 
                             <div class="slider-card col-12 d-flex justify-content-center ">
                                 <div class="box row justify-content-center">
-                                    <p class={projeto == 1 ? 'vergs-tattoo' : projeto == 2 ? 'thiago-adv' : 'hermes-project'}>
+                                    <p class={projeto == 1 ? 'vergs-tattoo carousel-titles' : projeto == 2 ? 'thiago-adv carousel-titles' : 'hermes-project carousel-titles'}>
 
                                         <Icon icon="bxs:left-arrow"
                                             class='icon-projects'
