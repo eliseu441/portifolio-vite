@@ -1,13 +1,397 @@
 @import 'https://fonts.googleapis.com/css2?family=Russo+One&display=swap';
 
-.cs-site_header {
+
+
+.cs-nav .cs-nav_list .active {
+    color: rgb(255 255 255);
+    text-shadow: 3px 2px 3px rgb(255 255 255 / 60%);
+}
+
+
+.cs-site_header.cs-style1 .cs-main_header_in,
+.cs-site_header.cs-style1 .cs-top_header_in {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 90px;
     position: relative;
-    z-index: 101;
 }
-.cs-site-branding {
+
+//hamburguer right-side
+.cs-site_header.cs-style1 .cs-icon_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 3px solid currentcolor;
+    border-radius: 50%;
+    color: rgb(255 255 255);
+}
+.cs-site_header.cs-style1 .cs-icon_btn .cs-icon_btn_in {
+    width: 18px;
+    height: 16px;
+    line-height: 0;
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+}
+.cs-site_header.cs-style1 .cs-icon_btn .cs-icon_btn_in span {
     display: inline-block;
-    max-width: 180px;
+    position: absolute;
+    height: 2.4px;
+    width: 100%;
+    background-color: currentcolor;
+    color: inherit;
+    vertical-align: top;
+    transition: 0s ease-in-out;
+    border-radius: 3px;
 }
+
+.cs-site_header.cs-style1 .cs-icon_btn .cs-icon_btn_in span:nth-child(1) {
+    transform: translate(0, -7px);
+    width: calc(100% - 4px);
+}
+
+.cs-site_header.cs-style1 .cs-icon_btn .cs-icon_btn_in span:nth-child(2) {
+    transform: translate(0, 0);
+    width: calc(100% - 4px);
+}
+
+.cs-site_header.cs-style1 .cs-icon_btn .cs-icon_btn_in span:nth-child(3) {
+    transform: translate(0, 7px);
+}
+
+.cs-site_header.cs-style1 .cs-icon_btn .cs-icon_btn_in span:nth-child(4) {
+    transform: translate(0, 14px);
+}
+
+.cs-site_header.cs-style1 .cs-icon_btn:hover .cs-icon_btn_in span {
+    transition: 0.3s ease-in-out;
+}
+
+.cs-site_header.cs-style1 .cs-icon_btn:hover .cs-icon_btn_in span:nth-child(1) {
+    transform: translate(0, 0);
+}
+
+.cs-site_header.cs-style1 .cs-icon_btn:hover .cs-icon_btn_in span:nth-child(2) {
+    transform: translate(0, 7px);
+    width: 100%;
+}
+
+.cs-site_header.cs-style1 .cs-icon_btn:hover .cs-icon_btn_in span:nth-child(3) {
+    transform: translate(0, 14px);
+}
+
+.cs-site_header.cs-style1 .cs-icon_btn:hover .cs-icon_btn_in span:nth-child(4) {
+    transform: translate(0, 21px);
+}
+
+.cs-side_header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+//sidebar right-side
+.cs-side_header .cs-side_header_in {
+    width: 500px;
+    height: 100vh;
+    background-color: #181818;
+    flex: none;
+    margin-left: auto;
+    overflow: auto;
+    padding: 90px 50px 50px;
+    position: relative;
+    z-index: 2;
+    right: -500px;
+    transition: all 0.4s ease;
+}
+
+.cs-side_header .cs-close {
+    border: none;
+    opacity: 0;
+}
+
+.cs-side_header.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cs-side_header.active .cs-side_header_overlay,
+.cs-side_header.active .cs-close {
+    opacity: 1;
+}
+
+.cs-side_header.active .cs-side_header_in {
+    right: 0;
+}
+.cs-side_header .cs-side_header_shape {
+    height: 257px;
+    width: 257px;
+    overflow: hidden;
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+}
+
+//circle sidebar right-side
+.cs-side_header .cs-side_header_shape::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: -90px;
+    bottom: -80px;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.cs-close {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid currentcolor;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.cs-close::before,
+.cs-close::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: currentcolor;
+    left: 50%;
+    top: 50%;
+    margin-left: -25%;
+    margin-top: -1px;
+    transform: rotate(-45deg);
+}
+
+.cs-close::before {
+    transform: rotate(45deg);
+}
+
+.cs-close:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+
+.cs-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+//header design
+.cs-sticky_header {
+    margin-top: -10px;
+    background-color: rgb(0 0 0 / 30%);
+    position: fixed !important;
+    width: 100%;
+    z-index: 999;
+    transition: all 0.4s ease;
+}
+
+.cs-sticky_header_active {
+    top: 0;
+    background-color: #000;
+}
+
+@media screen and (width >= 900px) {
+    .cs-nav {
+        font-family: 'Russo One', sans-serif;
+        font-size: 30px !important;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        line-height: 1.6em;
+        color: white;
+    }
+
+    .cs-nav .cs-nav_list {
+        display: flex !important;
+        flex-wrap: wrap;
+        height: inherit;
+    }
+
+    .cs-nav .cs-nav_list>li {
+        margin-right: 50px;
+        height: inherit;
+    }
+
+    .cs-nav .cs-nav_list>li:last-child {
+        margin-right: 0;
+    }
+
+    .cs-nav .cs-nav_list>li>a {
+        text-decoration: none;
+        color: #f60;
+        padding: 10px 0;
+        display: inline-flex;
+        position: relative;
+        height: inherit;
+        align-items: center;
+    }
+
+    .cs-nav .cs-nav_list>li>a:hover {
+        color: white;
+        transition: 0.5s;
+    }
+
+
+
+
+}
+
+@media screen and (width <= 899px) {
+    /* Mobile Menu Button */
+
+    @keyframes show-down-header {
+        0% {
+            margin-top: -20vh;
+        }
+
+        100% {
+            margin-top: 0;
+        }
+    }
+
+    .cs-nav .cs-nav_list {
+        animation: show-down-header 1s;
+        width: 100vw;
+        background-color: rgb(0 0 0 / 40%);
+        backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        padding: 10px 0;
+        display: none;
+        top: 100%;
+        border-top: 1px solid #4d4d4d 52;
+        border-bottom: 1px solid #4d4d4d 52;
+        overflow: auto;
+        max-height: calc(100vh - 80px);
+        line-height: 1.6em;
+    }
+
+    .cs-nav .cs-nav_list a {
+        text-decoration: none;
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 700;
+        font-size: 2.5vh;
+        color: #fff;
+        text-align: start;
+        margin-left: 4%;
+    }
+
+
+    .cs-nav .cs-nav_list a {
+        display: block;
+        padding: 8px 20px;
+    }
+
+    .cs-munu_toggle {
+        display: inline-block;
+        width: 30px;
+        height: 27px;
+        cursor: pointer;
+        position: absolute;
+        top: 27px;
+        right: 30px;
+    }
+
+    .cs-munu_toggle span,
+    .cs-munu_toggle span::before,
+    .cs-munu_toggle span::after {
+        width: 100%;
+        height: 2px;
+        background-color: currentcolor;
+        display: block;
+    }
+
+    .cs-munu_toggle span {
+        margin: 0 auto;
+        position: relative;
+        top: 12px;
+        transition-duration: 0s;
+        transition-delay: 0.2s;
+    }
+
+    .cs-munu_toggle span::before {
+        content: '';
+        position: absolute;
+        margin-top: -9px;
+        transition-property: margin, transform;
+        transition-duration: 0.2s;
+        transition-delay: 0.2s, 0s;
+    }
+
+    .cs-munu_toggle span::after {
+        content: '';
+        position: absolute;
+        margin-top: 9px;
+        transition-property: margin, transform;
+        transition-duration: 0.2s;
+        transition-delay: 0.2s, 0s;
+    }
+
+    .cs-site_header.cs-style1 .cs-munu_toggle {
+        top: 50%;
+        right: 0;
+        margin-top: -13px;
+    }
+
+    .cs-toggle_active span {
+        background-color: rgb(0 0 0 / 0%);
+        transition-delay: 0.2s;
+    }
+
+    .cs-toggle_active span::before {
+        margin-top: 0;
+        transform: rotate(45deg);
+        transition-delay: 0s, 0.2s;
+    }
+
+    .cs-toggle_active span::after {
+        margin-top: 0;
+        transform: rotate(-45deg);
+        transition-delay: 0s, 0.2s;
+    }
+
+    .cs-site_header.cs-style1 .cs-main_header_in {
+        height: 80px;
+    }
+
+    .cs-hamburger span {
+        height: 3px;
+    }
+
+
+    .cs-toolbox,
+    .cs-side_header {
+        display: none;
+    }
+
+}
+
 @media screen and (width < 900px) {
     .cs-main_header_center {
         position: absolute;
@@ -19,13 +403,12 @@
         right:  10px!important;
     }
 }
+
+
 .combo-sidebar .rw-widget-input {
     color: white;
     font-family: Montserrat, sans-serif;
     background-color: black !important;
-}
-
-.rw-widget-input {
 }
 .rw-slide-transition {
     background-color: rgb(21, 21, 21)!important;

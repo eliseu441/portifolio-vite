@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import { DropdownList } from 'react-widgets';
 import { useLanguage } from '../LanguageProvider/Language.jsx';
 import SocialWidget from '../Widget/SocialWidget';
-import './header.css';
 import ContactInfoWidget from '../Widget/ContactInfoWidget';
 import { portuguese, english } from '../../translate/languages.jsx';
 
