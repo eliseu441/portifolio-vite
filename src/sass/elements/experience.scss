@@ -1,10 +1,7 @@
-@media (width >= 2px) {
+
     @import "https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap";
     @import 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap';
 
-    .aviso {
-        display: none
-    }
 
     .scroll-downs {
         position: flex;
@@ -29,10 +26,7 @@
         height: 10px;
         border-radius: 25%;
         background-color: #fff;
-        animation-name: scroll;
-        animation-duration: 2.2s;
-        animation-timing-function: cubic-bezier(.15, .41, .69, .94);
-        animation-iteration-count: infinite;
+        animation: scroll 2.2s cubic-bezier(.15, .41, .69, .94)  infinite;
     }
 
     @keyframes scroll {
@@ -51,38 +45,13 @@
         }
     }
 
-    .page-experience {
-        padding-top: 100px;
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-    }
 
 
-
-
-    .tools {
-        font-family: 'Archivo Black', sans-serif;
-        color: white;
-    }
-
-    .desc-experience {
-        font-family: 'Archivo Black', sans-serif;
-        font-size: 2vh;
-        letter-spacing: 1px;
-        color: white;
-
-    }
 
     .icons {
         margin: 10px;
-        text-align: center;
-        align-items: center;
         border-radius: 20px;
         background-color: rgb(255 255 255 / 80%);
-        position: relative;
         cursor: pointer;
         transition: ease 1s;
     }
@@ -92,7 +61,3 @@
         background-color: rgb(255 255 255 / 90%);
         ;
     }
-
-}
-
-@media (width <= 770px) {}

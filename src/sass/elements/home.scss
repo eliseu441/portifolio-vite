@@ -11,17 +11,6 @@
   overflow-x: hidden;
 }
 
-body,
-main {
-  width: 100vw;
-  overflow-x: hidden;
-  background-color: #000 !important;
-
-}
-
-#map {
-  height: 100%;
-}
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -33,31 +22,6 @@ main {
   background: #888;
 }
 
-
-@keyframes bg-animation {
-  0%,
-  100% {
-    filter: grayscale(70%) brightness(70%) sepia(50%) hue-rotate(-100deg) saturate(500%) contrast(1);
-  }
-
-  50% {
-    filter: none;
-  }
-}
-
-@keyframes show-icons {
-  0% {
-    opacity: 0;
-  }
-
-  90% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
 
 @keyframes dd1 {
   0% {}
@@ -352,14 +316,6 @@ body {
   background: white;
   border-radius: 15px;
   margin: auto;
-}
-
-.description .card-intro .share {
-  animation: show-icons 4.5s normal;
-  margin-top: 1em;
-  display: flex;
-  justify-content: center;
-  gap: 1em;
 }
 
 .description .card-intro a {
@@ -684,7 +640,6 @@ overflow: hidden;
 }
 
 .card-experiences{
-  animation: show-icons 1s normal;
   transition: all 1s !important;
   background-size: cover cover;
   background-position-y: 10%;   
@@ -700,7 +655,6 @@ overflow: hidden;
   margin-bottom: -100px;
   width: 100%;
   background: rgb(0 0 0 / 60%);
-  backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
 }
 
@@ -718,9 +672,6 @@ overflow: hidden;
   background-clip: text;
 }
 
-.page-home{
-  width: 100vw;
-}
 
 .Btn {
   width: 45px!important;
