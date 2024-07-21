@@ -436,3 +436,24 @@ border-color: rgb(175, 38, 0)!important;
     outline: none;
     width: 100%;
 }
+
+#checkbox-input {
+    display: none;
+  }
+  
+  .switch {
+    width: fit-content;
+    padding: 10px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 50px;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    transition: all 0.7s;
+  }
+  
+  #checkbox-input:checked + .switch {
+    background-color: rgb(219, 219, 219);
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  }
+  

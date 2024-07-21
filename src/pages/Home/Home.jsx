@@ -7,8 +7,7 @@ import Preloader from "../../layout/preLoader/Preloader.jsx";
 import Aos from 'aos';
 
 function Home() {
-
-    const { language, setLanguage } = useLanguage();
+    const { language, theme } = useLanguage();
     const [profile, setProfile] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
@@ -19,13 +18,47 @@ function Home() {
         }, 1500);
         Aos.init({ once: true });
     }, []);
-
-
+    const bg_home = theme == false ? { backgroundImage: "url('/img/bg_home.jpg')"} : { backgroundImage: "url('/img/background-white.png')", opacity:'0.9'  }
+    const card_timeline = theme == false ? { background: 'rgb(0, 0, 0)', color: '#fff' } : { background: 'white', color: 'black' }
+    const experienceBg = theme == false ?
+        {
+            background: "rgb(0 0 0 / 60%)",
+            borderBottom: '3px solid white'
+        } :
+        {
+            background: "rgba(255, 255, 255, 0.4)",
+            border: '2px solid white',
+            borderRight: 'none',
+            webkitBoxShadow: ' inset 1px -4px 20px 0px rgba(0,0,0,0.1)',
+            mozBoxShadow: 'inset 1px -4px 20px 0px rgba(0,0,0,0.1)',
+            boxShadow: 'inset 1px -4px 20px 0px rgba(0,0,0,0.1)',
+        }
+    const sideBio = theme == false ?
+        {
+            color: "white",
+            cursor: !profile ? 'pointer' : 'auto',
+            background: 'rgba(0, 0, 0, 0.8)'
+        } :
+        {
+            color: "black",
+            cursor: !profile ? 'pointer' : 'auto',
+            background: 'rgba(255, 255, 255, 0.4)',
+            webkitBoxShadow: ' inset 1px -4px 20px 0px rgba(0,0,0,0.2)',
+            mozBoxShadow: 'inset 1px -4px 20px 0px rgba(0,0,0,0.2)',
+            boxShadow: 'inset 1px -4px 20px 0px rgba(0,0,0,0.2)',
+            border: '2px solid white',
+            borderColor:'white'
+        }
     return (
         <>
             {isLoading ? <Preloader /> : <> </>}
             <div class='page-home'>
-                <div style={{ cursor: !profile ? 'pointer' : 'auto' }} onClick={e => !profile ? setProfile(!profile) : ''} class={`${profile == true ? 'side-bio' : 'side-bio hide-side-bio'} d-flex justify-content-center align-items-start row`} id="myHeader" >
+                <div style={ sideBio} 
+                onClick={e => !profile ? setProfile(!profile) : ''} 
+                class={`${profile == true ? 'side-bio' : 'side-bio hide-side-bio'} d-flex justify-content-center align-items-start row`} 
+                id="myHeader"
+                
+                >
 
                     <div class="typer d-flex justify-content-center row mt-3">
                         <img src="/img/bio_icon.jpg" class='icon col-12' alt="" />
@@ -50,23 +83,23 @@ function Home() {
 
                         </div>
                         <div class='d-flex col-12 justify-content-center'>
-                        <a href="https://www.linkedin.com/in/eliseu-caetano-da-silva-68a272186/" target="_blank">
-                            <button class="Btn linkedin me-2">
-                                <span class="svgContainer">
-                                    <svg
-                                        viewBox="0 0 448 512"
-                                        height="1.6em"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="svgIcon"
-                                        fill="white"
-                                    >
-                                        <path
-                                            d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
-                                        ></path>
-                                    </svg>
-                                </span>
-                                <span class="BG"></span>
-                            </button>
+                            <a href="https://www.linkedin.com/in/eliseu-caetano-da-silva-68a272186/" target="_blank">
+                                <button class="Btn linkedin me-2">
+                                    <span class="svgContainer">
+                                        <svg
+                                            viewBox="0 0 448 512"
+                                            height="1.6em"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="svgIcon"
+                                            fill="white"
+                                        >
+                                            <path
+                                                d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                    <span class="BG"></span>
+                                </button>
                             </a>
                             <a href="https://github.com/eliseu441" target="_blank">
                                 <button class="Btn github" >
@@ -76,7 +109,7 @@ function Home() {
                                     <span class="BG"></span>
                                 </button>
                             </a>
-                            
+
                             <button class="Btn">
                                 <span class="svgContainer " >
                                     <a class='curriculum' href={`${language === 'portugues' ? "/cv/cv_pt.pdf" : "/cv/curriculum.pdf"}`}><span class="tooltiptext">CV</span> <i class="bi bi-filetype-pdf ms-2 "></i></a>
@@ -98,17 +131,19 @@ function Home() {
                 </div>
                 <div class='d-flex justify-content-end' data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000" style={{ zIndex: 2, position: "relative" }} >
                     <div class={`${profile == true ? 'col-7 d-flex justify-content-end p-0 m-0' : 'col-11 d-flex justify-content-end p-0 m-0'} `} style={{ transition: 'all 1s' }}>
-                        <div className='card-experiences d-flex align-items-center' >
+                        <div className='card-experiences d-flex align-items-center'
+                            style={experienceBg}
+                        >
                             <span class='title-experience col-sm-10 d-flex justify-content-center m-0 p-0'>{language === 'portugues' ? portuguese.home.title : english.home.title}</span>
 
                         </div>
                     </div>
                 </div>
-                <div class="main">
-                    <div class="d1"></div>
-                    <div class="d2"></div>
-                    <div class="d3"></div>
-                    <div class="d4"></div>
+                <div class="main" style={bg_home}>
+                    <div class="d1" style={bg_home}></div>
+                    <div class="d2" style={bg_home}></div>
+                    <div class="d3" style={bg_home}></div>
+                    <div class="d4" style={bg_home}></div>
                 </div >
 
 
@@ -121,7 +156,7 @@ function Home() {
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
 
-                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentStyle={card_timeline}
                                 date="2020"
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 iconStyle={{ background: '#43d131', color: 'white', display: 'flex' }}
@@ -134,7 +169,7 @@ function Home() {
                             </VerticalTimelineElement>
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
-                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentStyle={card_timeline}
                                 date="2021"
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
@@ -146,7 +181,7 @@ function Home() {
 
                             </VerticalTimelineElement><VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
-                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentStyle={card_timeline}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 date="2021"
                                 iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
@@ -157,7 +192,7 @@ function Home() {
                                 {language === 'portugues' ? portuguese.home.zenvia() : english.home.zenvia()}
                             </VerticalTimelineElement><VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
-                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentStyle={card_timeline}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 date="2022"
                                 iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
@@ -169,7 +204,7 @@ function Home() {
                             </VerticalTimelineElement>
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
-                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentStyle={card_timeline}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 date="2022"
                                 iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
@@ -182,7 +217,7 @@ function Home() {
 
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
-                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentStyle={card_timeline}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 date="2024"
                                 iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
@@ -194,7 +229,7 @@ function Home() {
                             </VerticalTimelineElement>
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--teste"
-                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                contentStyle={card_timeline}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 date="2024"
                                 iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
