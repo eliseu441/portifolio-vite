@@ -439,18 +439,6 @@ body {
   }
 
 
-
-  .home-mobile .project-subtitle span {
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
-    -webkit-text-fill-color: transparent;
-    background: rgb(255 255 255);
-    background-clip: text;
-  }
-
   .card-intro-mobile {
     margin: 5%;
     height: 60vh;
@@ -668,6 +656,14 @@ overflow: hidden;
   background: rgb(255 94 0);
   background-clip: text;
 }
+.title-experience-white {
+  position: relative;
+  z-index: 2;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: #000;
+}
 
 
 .Btn {
@@ -717,6 +713,9 @@ overflow: hidden;
   font-size: 5vh;
   padding-top: 2px;
   padding-bottom: 10px;
-  color: rgb(202 74 0)!important;
   cursor: pointer;
+  opacity: 0.8;
+}
+.information:hover {
+  opacity: 1;
 }

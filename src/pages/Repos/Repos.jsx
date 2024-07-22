@@ -60,10 +60,10 @@ function Repos() {
                     <div class='title col-sm-12 d-flex justify-content-center'>
                         <span data-aos="fade-left" style={theme == false ? { color: "white" } : { color: "rgb(55, 55, 55)" }} data-aos-duration="1000">REPOSITORIES</span>
                     </div>
-                    <p className='ms-4' style={{ fontWeight: 'bolder' }} data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">search for an especific tech</p>
 
 
-                    <div className='table-repos col-sm-11'>
+                    <div className='table-repos col-12'>
+                        <p className='ms-2' style={theme == false ? { fontWeight: 'bolder',color: 'white' } : { fontWeight: 'bolder',color: 'black' }}  data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">Search for an especific tech</p>
                         <>
                             <Form.Control
                                 type="text"
@@ -87,7 +87,7 @@ function Repos() {
                                                 <Link to={`${item.link}`} target="_blank"  >
                                                     <div className='d-flex justify-content-center'>
                                                         <a class='curriculum'>
-                                                            <i class="bi bi-github  information"></i>
+                                                            <i class="bi bi-github  information" style={theme == false ? { color: 'rgb(239, 88, 0)' } : { color: 'black' }}></i>
                                                         </a>
                                                     </div>
                                                 </Link>
@@ -100,10 +100,11 @@ function Repos() {
                                 </tbody>
                             </Table>
                             <Pagination style={theme == false ? { opacity: 1 } : { opacity: 0.8 }}>{items}</Pagination>
+
                         </>
 
                     </div>
-                    <div className='col-sm-1 d-flex align-items-center justify-content-center m-0 p-0'>
+                    <div className='col-12 d-flex align-items-center justify-content-center m-0 p-0'>
                         <div class="scroll-downs ">
                             <div class="mousey" style={theme == false ? { border: '3px solid #fff' } : { border: '3px solid black' }}>
                                 <div class="scroller" style={theme == false ? { backgroundColor: 'white' } : { backgroundColor: 'black' }}></div>
@@ -118,7 +119,7 @@ function Repos() {
 
                 <div class=" row" data-aos="zoom-in" data-aos-duration="1000">
                     <p style={{ textAlign: 'center' }}  >
-                        <p class="project-subtitle ">tools that i have solid experience:</p>
+                        <p class="project-subtitle" style={theme == false ? { color: 'white' } : { color: 'black' }}>tools that i have solid experience:</p>
 
                         <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img class='icons' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="60" height="60" /> </a>
                         <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img class='icons' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="60" height="60" /> </a>

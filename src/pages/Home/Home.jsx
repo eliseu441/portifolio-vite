@@ -49,6 +49,7 @@ function Home() {
             border: '2px solid white',
             borderColor: 'white'
         }
+        
     return (
         <>
             {isLoading ? <Preloader /> : <> </>}
@@ -57,7 +58,6 @@ function Home() {
                     onClick={e => !profile ? setProfile(!profile) : ''}
                     class={`${profile == true ? 'side-bio' : 'side-bio hide-side-bio'} d-flex justify-content-center align-items-start row`}
                     id="myHeader"
-
                 >
 
                     <div class="typer d-flex justify-content-center row mt-3">
@@ -65,9 +65,9 @@ function Home() {
                         <div class='col-12 d-flex justify-content-center ms-4 mt-2'>
                             <div class='col-10 ms-2'>
                                 {theme == false ?
-                                <a href="https://github.com/eliseu441"><img src="https://readme-typing-svg.demolab.com?font=Monsterrat&weight=700&size=22&duration=1000&pause=700&color=F7F7F7&random=false&width=435&lines=I'm+Eliseu;I'm+a+full-stack;I'm+a+designer;I'm+a+database-manager" alt="Typing SVG" /></a>
-                                :
-                                <a href="https://github.com/eliseu441"><img src="https://readme-typing-svg.demolab.com?font=Monsterrat&weight=700&size=22&duration=1000&pause=1000&color=000000&width=435&lines=I'm+Eliseu;I'm+a+Full+stack;I'm+a+database+manager;I'm+a+designer" alt="Typing SVG" /></a>
+                                    <a href="https://github.com/eliseu441"><img src="https://readme-typing-svg.demolab.com?font=Monsterrat&weight=700&size=22&duration=1000&pause=700&color=F7F7F7&random=false&width=435&lines=I'm+Eliseu;I'm+a+full-stack;I'm+a+designer;I'm+a+database-manager" alt="Typing SVG" /></a>
+                                    :
+                                    <a href="https://github.com/eliseu441"><img src="https://readme-typing-svg.demolab.com?font=Monsterrat&weight=700&size=22&duration=1000&pause=1000&color=000000&width=435&lines=I'm+Eliseu;I'm+a+Full+stack;I'm+a+database+manager;I'm+a+designer" alt="Typing SVG" /></a>
                                 }
                             </div>
                         </div>
@@ -124,7 +124,10 @@ function Home() {
                         <div class='col-12 d-flex justify-content-end'>
                             <button class="Btn" onClick={e => setProfile(!profile)}>
                                 <span class="svgContainer ">
-                                    <a class='curriculum'><span class="tooltiptext">hide</span> <i class="bi bi-arrow-left-circle-fill fs-1 information"></i></a>
+                                    <a class='curriculum'>
+                                        <span class="tooltiptext">hide</span>
+                                        <i class="bi bi-arrow-left-circle-fill fs-1 information" style={theme == false ? { color: 'rgb(239, 88, 0)' } : { color: 'black' }}></i>
+                                    </a>
 
                                 </span>
                             </button>
@@ -138,7 +141,7 @@ function Home() {
                         <div className='card-experiences d-flex align-items-center'
                             style={experienceBg}
                         >
-                            <span class='title-experience col-sm-10 d-flex justify-content-center m-0 p-0'>{language === 'portugues' ? portuguese.home.title : english.home.title}</span>
+                            <span class={`${theme == false ? 'title-experience' : 'title-experience-white'} col-sm-10 d-flex justify-content-center m-0 p-0`}>{language === 'portugues' ? portuguese.home.title : english.home.title}</span>
 
                         </div>
                     </div>
@@ -176,7 +179,7 @@ function Home() {
                                 contentStyle={card_timeline}
                                 date="2021"
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
-                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                iconStyle={{ background: theme == false ? '#FF4A17' : 'black', color: 'white', display: 'flex' }}
                                 icon={<h3 style={{ margin: 'auto' }}>2</h3>}
 
                             >
@@ -188,7 +191,7 @@ function Home() {
                                 contentStyle={card_timeline}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 date="2021"
-                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                iconStyle={{ background: theme == false ? '#FF4A17' : 'black', color: 'white', display: 'flex' }}
                                 icon={<h3 style={{ margin: 'auto' }}>3</h3>}
 
                             >
@@ -199,7 +202,7 @@ function Home() {
                                 contentStyle={card_timeline}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 date="2022"
-                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                iconStyle={{ background: theme == false ? '#FF4A17' : 'black', color: 'white', display: 'flex' }}
                                 icon={<h3 style={{ margin: 'auto' }}>4</h3>}
 
                             >
@@ -211,7 +214,7 @@ function Home() {
                                 contentStyle={card_timeline}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 date="2022"
-                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                iconStyle={{ background: theme == false ? '#FF4A17' : 'black', color: 'white', display: 'flex' }}
                                 icon={<h3 style={{ margin: 'auto' }}>5</h3>}
 
                             >
@@ -224,7 +227,7 @@ function Home() {
                                 contentStyle={card_timeline}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 date="2024"
-                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
+                                iconStyle={{ background: theme == false ? '#FF4A17' : 'black', color: 'white', display: 'flex' }}
                                 icon={<h3 style={{ margin: 'auto' }}>6</h3>}
 
                             >
@@ -236,8 +239,8 @@ function Home() {
                                 contentStyle={card_timeline}
                                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
                                 date="2024"
-                                iconStyle={{ background: '#FF4A17', color: 'white', display: 'flex' }}
-                                icon={<h3 style={{ margin: 'auto' }}>6</h3>}
+                                iconStyle={{ background: theme == false ? '#FF4A17' : 'black', color: 'white', display: 'flex' }}
+                                icon={<h3 style={{ margin: 'auto' }}>7</h3>}
 
                             >
                                 <h3 className="vertical-timeline-element-title">{language === 'portugues' ? 'Agora' : 'Now'}</h3>
