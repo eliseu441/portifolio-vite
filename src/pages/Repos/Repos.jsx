@@ -104,20 +104,20 @@ function Repos() {
 
                     </div>
                     <div className='col-sm-1 d-flex align-items-center justify-content-center m-0 p-0'>
-                    <div class="scroll-downs ">
-                        <div class="mousey" style={theme == false ? { border: '3px solid #fff' } : { border: '3px solid black' }}>
-                            <div class="scroller" style={theme == false ? { backgroundColor: 'white' } : { backgroundColor: 'black' }}></div>
+                        <div class="scroll-downs ">
+                            <div class="mousey" style={theme == false ? { border: '3px solid #fff' } : { border: '3px solid black' }}>
+                                <div class="scroller" style={theme == false ? { backgroundColor: 'white' } : { backgroundColor: 'black' }}></div>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
 
             </div>
-            <div class='experience-content' data-aos="zoom-in" data-aos-duration="1000" >
+            <div class='experience-content' >
 
 
-                <div class=" row">
-                    <p style={{ textAlign: 'center' }}>
+                <div class=" row" data-aos="zoom-in" data-aos-duration="1000">
+                    <p style={{ textAlign: 'center' }}  >
                         <p class="project-subtitle ">tools that i have solid experience:</p>
 
                         <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img class='icons' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="60" height="60" /> </a>
