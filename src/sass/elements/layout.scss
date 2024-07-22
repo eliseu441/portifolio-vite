@@ -96,7 +96,7 @@
     right: 0;
     width: 100%;
     z-index: 1000;
-    height: 100vh;
+    height: 100dvh;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
@@ -104,7 +104,7 @@
 //sidebar right-side
 .cs-side_header .cs-side_header_in {
     width: 500px;
-    height: 100vh;
+    height: 100dvh;
     background-color: #181818;
     flex: none;
     margin-left: auto;
@@ -291,7 +291,7 @@
         border-top: 1px solid #4d4d4d 52;
         border-bottom: 1px solid #4d4d4d 52;
         overflow: auto;
-        max-height: calc(100vh - 80px);
+        max-height: calc(100dvh - 80px);
         line-height: 1.6em;
     }
 

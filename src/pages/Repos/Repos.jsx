@@ -117,10 +117,9 @@ function Repos() {
             <div class='experience-content' >
 
 
-                <div class=" row" data-aos="zoom-in" data-aos-duration="1000">
-                    <p style={{ textAlign: 'center' }}  >
+                <div class=" row" >
+                    <p  data-aos="zoom-in" data-aos-duration="1000"  style={{ textAlign: 'center' }} >
                         <p class="project-subtitle" style={theme == false ? { color: 'white' } : { color: 'black' }}>tools that i have solid experience:</p>
-
                         <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img class='icons' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="60" height="60" /> </a>
                         <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img class='icons' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="60" height="60" /> </a>
                         <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img class='icons' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="60" height="60" /> </a>

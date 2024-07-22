@@ -8,12 +8,12 @@
 
     .default-project{
         background-size: cover;
-        min-height: 100vh;
+        min-height: 100dvh;
     }
     .parallax-wrap {
         z-index: 0;
         position: fixed;
-        height: 100vh;
+        height: 100dvh;
         width: 100vw;
         overflow: hidden;
         display: flex;

@@ -74,12 +74,12 @@ body{
 
   50% {
     width: 30vw;
-    height: 100vh;
+    height: 100dvh;
   }
 }
 
 .main { 
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   position: fixed;
   top:0;
@@ -122,7 +122,7 @@ body{
   background-image: url('/img/bg_home.jpg');
   background-size: 2700px 1500px;
   overflow: hidden;
-  height: 100vh;
+  height: 100dvh;
   width: 40vw;
   left: 25vw;
   box-shadow: 0 0 25px rgb(0 0 0 / 80%);
@@ -421,7 +421,7 @@ body {
     position: relative;
     z-index: 1;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     overflow: scroll;
   }
 
