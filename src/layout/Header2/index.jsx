@@ -26,6 +26,15 @@ export default function Header({ variant }) {
 
 
   }, [language, theme]);
+  const headerText = theme == false ?
+        {
+            color: "#f60"
+        } :
+        {
+            color: "rgb(183, 183, 183)"
+        }
+
+
 
   return (
     <>
@@ -84,7 +93,7 @@ export default function Header({ variant }) {
                     style={{ display: `${mobileToggle ? 'block' : 'none'}` }}
                   >
                     <li className="menu-item">
-                      <NavLink to="/" onClick={() => setMobileToggle(false)}>
+                      <NavLink to="/" onClick={() => setMobileToggle(false)} style={headerText}>
                         {language === 'portugues' ? portuguese.header.home : english.header.home}
                       </NavLink>
 
@@ -92,7 +101,7 @@ export default function Header({ variant }) {
                     <li>
                       <NavLink
                         to="projects"
-                        onClick={() => setMobileToggle(false)}
+                        onClick={() => setMobileToggle(false)} style={headerText}
                       >
                         {language === 'portugues' ? portuguese.header.projects : english.header.projects}
                       </NavLink>
@@ -100,7 +109,7 @@ export default function Header({ variant }) {
                     <li>
                       <NavLink
                         to="repos"
-                        onClick={() => setMobileToggle(false)}
+                        onClick={() => setMobileToggle(false)} style={headerText}
                       >
                         {language === 'portugues' ? portuguese.header.repos : english.header.repos}
                       </NavLink>
