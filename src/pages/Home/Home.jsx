@@ -18,7 +18,7 @@ function Home() {
         }, 1500);
         Aos.init({ once: true });
     }, []);
-    const bg_home = theme == false ? { backgroundImage: "url('/img/bg_home.jpg')"} : { backgroundImage: "url('/img/background-white.png')", opacity:'1'  }
+    const bg_home = theme == false ? { backgroundImage: "url('/img/bg_home.jpg')" } : { backgroundImage: "url('/img/background-white.png')", opacity: '1' }
     const card_timeline = theme == false ? { background: 'rgb(0, 0, 0)', color: '#fff' } : { background: 'white', color: 'black' }
     const experienceBg = theme == false ?
         {
@@ -47,24 +47,28 @@ function Home() {
             mozBoxShadow: 'inset 1px -4px 20px 0px rgba(0,0,0,0.2)',
             boxShadow: 'inset 1px -4px 20px 0px rgba(0,0,0,0.2)',
             border: '2px solid white',
-            borderColor:'white'
+            borderColor: 'white'
         }
     return (
         <>
             {isLoading ? <Preloader /> : <> </>}
             <div class='page-home'>
-                <div style={ sideBio} 
-                onClick={e => !profile ? setProfile(!profile) : ''} 
-                class={`${profile == true ? 'side-bio' : 'side-bio hide-side-bio'} d-flex justify-content-center align-items-start row`} 
-                id="myHeader"
-                
+                <div style={sideBio}
+                    onClick={e => !profile ? setProfile(!profile) : ''}
+                    class={`${profile == true ? 'side-bio' : 'side-bio hide-side-bio'} d-flex justify-content-center align-items-start row`}
+                    id="myHeader"
+
                 >
 
                     <div class="typer d-flex justify-content-center row mt-3">
                         <img src="/img/bio_icon.jpg" class='icon col-12' alt="" />
                         <div class='col-12 d-flex justify-content-center ms-4 mt-2'>
                             <div class='col-10 ms-2'>
+                                {theme == false ?
                                 <a href="https://github.com/eliseu441"><img src="https://readme-typing-svg.demolab.com?font=Monsterrat&weight=700&size=22&duration=1000&pause=700&color=F7F7F7&random=false&width=435&lines=I'm+Eliseu;I'm+a+full-stack;I'm+a+designer;I'm+a+database-manager" alt="Typing SVG" /></a>
+                                :
+                                <a href="https://github.com/eliseu441"><img src="https://readme-typing-svg.demolab.com?font=Monsterrat&weight=700&size=22&duration=1000&pause=1000&color=000000&width=435&lines=I'm+Eliseu;I'm+a+Full+stack;I'm+a+database+manager;I'm+a+designer" alt="Typing SVG" /></a>
+                                }
                             </div>
                         </div>
                         <div class='bio d-flex justify-content-center align-items-start row'>
@@ -245,7 +249,7 @@ function Home() {
                 </div>
 
             </div>
-           
+
         </>
     )
 }
