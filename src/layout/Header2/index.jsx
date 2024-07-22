@@ -23,7 +23,7 @@ export default function Header({ variant }) {
     });
   }, []);
   useEffect(() => {
-    
+
 
   }, [language, theme]);
 
@@ -37,9 +37,10 @@ export default function Header({ variant }) {
           <div className="">
             <div className="cs-main_header_in">
               <div className="cs-main_header_left row d-flex">
-              <div className='col-2 ms-2 me-2'>
+                <div className='col-2 ms-2 me-2'>
                   <input id="checkbox-input" type="checkbox"
-                   onChange={(e) => setTheme(e.target.checked)}   
+                    data-bs-toggle="modal" data-bs-target="#modalTheme"
+                    onChange={(e) => setTheme(e.target.checked)}
                   />
                   <label class="switch" htmlFor="checkbox-input">
                     <svg
@@ -63,7 +64,7 @@ export default function Header({ variant }) {
                       ></path>
                     </svg>
                   </label>
-                </div>  
+                </div>
                 <div className='combo-sidebar col-9 '>
                   <DropdownList
                     defaultValue={language}
@@ -72,7 +73,7 @@ export default function Header({ variant }) {
                     onChange={(value) => setLanguage(value)}
                   />
                 </div>
-                
+
 
               </div>
               <div className="cs-main_header_center">
@@ -161,6 +162,29 @@ export default function Header({ variant }) {
           <div className="cs-side_header_box">
             <SocialWidget />
           </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modalTheme" tabindex="-2" aria-labelledby="modalThemeLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable .modal-xl ">
+
+
+          <div class="modal-content">
+            <div class="modal-header">
+              <p className="col-11 d-flex justify-content-center m-0 p-0" style={{color:'red', fontWeight:'bolder', fontSize:'20px', fontFamily:'Montserrat, sans-serif'}}>
+                WARNING
+              </p>
+              <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class='modal-body pe-5 ps-5 '>
+              <p  style={{color:'black', fontWeight:'bolder', fontSize:'20px', fontFamily:'Montserrat, sans-serif'}}>
+                this feature is under development, may cause errors.
+              </p>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </>

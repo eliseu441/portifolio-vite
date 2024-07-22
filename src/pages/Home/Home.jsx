@@ -245,6 +245,7 @@ function Home() {
                 </div>
 
             </div>
+           
         </>
     )
 }
