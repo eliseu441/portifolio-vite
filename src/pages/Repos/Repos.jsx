@@ -58,7 +58,7 @@ function Repos() {
                 <div className='row  d-flex justify-content-center'>
 
                     <div class='title col-sm-12 d-flex justify-content-center'>
-                        <span  style={theme == false ? { color: "white" } : { color: "rgb(55, 55, 55)" }}data-aos="fade-left" data-aos-duration="1000">REPOSITORIES</span>
+                        <span data-aos="fade-left" style={theme == false ? { color: "white" } : { color: "rgb(55, 55, 55)" }} data-aos-duration="1000">REPOSITORIES</span>
                     </div>
 
 
@@ -118,7 +118,7 @@ function Repos() {
 
 
                 <div class=" row" >
-                    <p style={{ textAlign: 'center' }} >
+                    <p  data-aos="zoom-in" data-aos-duration="1000"  style={{ textAlign: 'center' }} >
                         <p class="project-subtitle" style={theme == false ? { color: 'white' } : { color: 'black' }}>tools that i have solid experience:</p>
                         <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img class='icons' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="60" height="60" /> </a>
                         <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img class='icons' src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="60" height="60" /> </a>
