@@ -17,7 +17,6 @@
     height: 90px;
     position: relative;
 }
-
 //hamburguer right-side
 .cs-site_header.cs-style1 .cs-icon_btn {
     display: flex;
@@ -218,6 +217,7 @@
 }
 
 @media screen and (width >= 900px) {
+ 
     .cs-nav {
         font-family: 'Russo One', sans-serif;
         font-size: 30px !important;
@@ -265,6 +265,10 @@
 
 @media screen and (width <= 899px) {
     /* Mobile Menu Button */
+       
+.cs-nav_list a{
+    color: white!important;
+}
 
     @keyframes show-down-header {
         0% {
