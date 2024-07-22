@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '../../layout/LanguageProvider/Language.jsx';
 import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
@@ -13,6 +14,7 @@ function Repos() {
     const [filteredData, setFilteredData] = useState(colunas);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(5);
+    const { language, theme } = useLanguage();
 
     useEffect(() => {
         const results = colunas.filter(row =>
@@ -34,27 +36,34 @@ function Repos() {
             </Pagination.Item>,
         );
     }
+    const fontColor = theme == false ? {
+        color: "white",
+        background: 'linear-gradient(0deg, rgb(91, 83, 110, 0.4) 50%, rgb(42, 36, 56, 0.3) 100%)'
+    } : {
+        color: "white",
+        background: 'linear-gradient(0deg, rgb(44, 44, 44, 0.8) 30%, rgb(75, 75, 75, 0.7) 100%)'
+    };
 
-
+    //bordered pra adicionar
     return (
         <>
 
-            <div class='stars'>
+            <div class='stars' style={theme == false ? { background: "black" } : { background: "white" }}>
                 <div id='stars'></div>
                 <div id='stars2'></div>
                 <div id='stars3'></div>
             </div>
             <div className='page-repos'>
 
-                <div className='row col-sm-11  d-flex justify-content-center'>
+                <div className='row  d-flex justify-content-center'>
 
                     <div class='title col-sm-12 d-flex justify-content-center'>
-                        <span data-aos="fade-left" data-aos-duration="1000">REPOSITORIES</span>
+                        <span data-aos="fade-left" style={theme == false ? { color: "white" } : { color: "rgb(55, 55, 55)" }} data-aos-duration="1000">REPOSITORIES</span>
                     </div>
                     <p className='ms-4' style={{ fontWeight: 'bolder' }} data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">search for an especific tech</p>
 
 
-                    <div className='table-repos'>
+                    <div className='table-repos col-sm-11'>
                         <>
                             <Form.Control
                                 type="text"
@@ -62,25 +71,25 @@ function Repos() {
                                 className="mb-3"
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
-                            <Table striped bordered hover className="custom-table">
-                                <thead>
+                            <Table striped hover className="custom-table">
+                                <thead >
                                     <tr>
-                                        <th className='d-flex justify-content-center'>REPO</th>
-                                        <th>NAME</th>
-                                        <th>LANGUAGES/FRAMEWORKS</th>
-                                        <th>START_YEAR</th>
+                                        <th style={fontColor} className='d-flex justify-content-center'>REPO</th>
+                                        <th style={fontColor}>NAME</th>
+                                        <th style={fontColor}>LANGUAGES/FRAMEWORKS</th>
+                                        <th style={fontColor}>START_YEAR</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {currentItems.map((item) => (
                                         <tr key={item.id}>
                                             <td>
-                                            <Link to={`${item.link}`} target="_blank"  >
-                                                <div className='d-flex justify-content-center'>
-                                                    <a class='curriculum'>
-                                                        <i class="bi bi-github  information"></i>
-                                                    </a>
-                                                </div>
+                                                <Link to={`${item.link}`} target="_blank"  >
+                                                    <div className='d-flex justify-content-center'>
+                                                        <a class='curriculum'>
+                                                            <i class="bi bi-github  information"></i>
+                                                        </a>
+                                                    </div>
                                                 </Link>
                                             </td>
                                             <td>{item.name}</td>
@@ -90,14 +99,16 @@ function Repos() {
                                     ))}
                                 </tbody>
                             </Table>
-                            <Pagination>{items}</Pagination>
+                            <Pagination style={theme == false ? { opacity: 1 } : { opacity: 0.8 }}>{items}</Pagination>
                         </>
 
                     </div>
-                    <div class="scroll-downs col-12 d-flex justify-content-center">
+                    <div className='col-sm-1 d-flex align-items-center justify-content-center'>
+                    <div class="scroll-downs ">
                         <div class="mousey">
                             <div class="scroller"></div>
                         </div>
+                    </div>
                     </div>
                 </div>
 
