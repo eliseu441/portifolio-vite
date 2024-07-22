@@ -72,7 +72,7 @@ function Repos() {
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
                             <Table striped hover className="custom-table">
-                                <thead >
+                                <thead>
                                     <tr>
                                         <th style={fontColor} className='d-flex justify-content-center'>REPO</th>
                                         <th style={fontColor}>NAME</th>
@@ -103,10 +103,10 @@ function Repos() {
                         </>
 
                     </div>
-                    <div className='col-sm-1 d-flex align-items-center justify-content-center'>
+                    <div className='col-sm-1 d-flex align-items-center justify-content-center m-0 p-0'>
                     <div class="scroll-downs ">
-                        <div class="mousey">
-                            <div class="scroller"></div>
+                        <div class="mousey" style={theme == false ? { border: '3px solid #fff' } : { border: '3px solid black' }}>
+                            <div class="scroller" style={theme == false ? { backgroundColor: 'white' } : { backgroundColor: 'black' }}></div>
                         </div>
                     </div>
                     </div>
