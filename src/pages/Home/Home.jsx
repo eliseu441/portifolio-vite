@@ -23,7 +23,12 @@ function Home() {
     const experienceBg = theme == false ?
         {
             background: "rgb(0 0 0 / 60%)",
-            borderBottom: '3px solid white'
+            borderBottom: '3px solid rgba(200, 200, 200)',
+            borderLeft: '3px solid rgba(200, 200, 200)',
+            borderTop: '3px solid rgba(200, 200, 200)',
+            webkitBoxShadow: ' inset 1px -1px 20px 0px rgba(255, 255, 255,0.3)',
+            mozBoxShadow: 'inset 1px -1px 20px 0px rgba(255, 255, 255,0.3)',
+            boxShadow: 'inset 1px -1px 20px 0px rgba(255, 255, 255,0.3)',
         } :
         {
             background: "rgba(255, 255, 255, 0.4)",
@@ -37,7 +42,12 @@ function Home() {
         {
             color: "white",
             cursor: !profile ? 'pointer' : 'auto',
-            background: 'rgba(0, 0, 0, 0.8)'
+            background: 'rgba(0, 0, 0, 0.8)',
+            borderRight: '6px solid #d84f00',
+            border: '2px solid #d84f00',
+            webkitBoxShadow: ' inset 1px -4px 20px 0px rgba(255, 94, 0,0.8)',
+            mozBoxShadow: 'inset 1px -4px 20px 0px rgba(255, 94, 0,0.8)',
+            boxShadow: 'inset 1px -4px 20px 0px rgba(255, 94, 0,0.8)',
         } :
         {
             color: "black",
