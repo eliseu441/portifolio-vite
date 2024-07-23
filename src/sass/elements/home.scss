@@ -121,12 +121,12 @@ body{
   background-image: url('/img/bg_home.jpg');
   background-size: 2700px 1500px;
   overflow: hidden;
-  height: 100dvh;
+  height: 80dvh;
   width: 40vw;
   left: 25vw;
   box-shadow: 0 0 25px rgb(0 0 0 / 80%);
   background-position: -35vw 50%;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   z-index: 3;
   animation: dd3 10s 2, dd5 10s infinite;
@@ -394,6 +394,13 @@ body {
 }
 
 @media (width <= 900px) {
+  
+  
+.d3 {
+  left: 5vw;
+  width: 80vw;
+  height: 70dvh;
+}
   .home-desktop {
     display: none !important;
   }
