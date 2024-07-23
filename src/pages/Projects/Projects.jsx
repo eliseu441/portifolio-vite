@@ -6,7 +6,7 @@ import { portuguese, english } from '../../translate/languages.jsx';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import bg5 from '/img/bg_home.jpg';
+import bg5 from '/img/white_fluid.jpg';
 import Preloader from "../../layout/preLoader/Preloader.jsx";
 import CustomPaging from "./Slider.jsx";
 import Aos from 'aos';
@@ -21,7 +21,7 @@ const settings = {
 
 
 function Projects() {
-    const { language, setLanguage } = useLanguage();
+    const { language, theme } = useLanguage();
     const [loading, setLoading] = useState(true);
     const [projeto, setProjeto] = useState(1);
     const [nomeProjeto, setNomeProjeto] = useState('vergz');
@@ -83,9 +83,12 @@ function Projects() {
         await setNomeProjeto(number == 1 ? 'vergz' : number == 2 ? 'thiago' : 'hermes')
         setLoading(false)
         return
-
     }
-
+    const bg_projects = theme == false ? '/img/bg_home.jpg' : '/img/white_fluid.jpg'
+    const borderBox = theme == false ? 
+    {border: '1px solid rgb(217 61 0 / 45.4%)'} : 
+    {border: '2px solid white'}
+   
 
 
 
@@ -96,9 +99,9 @@ function Projects() {
             {isLoading ? <Preloader /> : <> </>}
             <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-            <div class='default-project' style={{ backgroundImage: 'url(./img/bg_home.jpg)' }}>
+            <div class='default-project' style={{ backgroundImage: `url(${bg_projects})` }}>
                 <div class="parallax-wrap" data-aos="zoom-in" data-aos-duration="1000">
-                    <img value="4" src={bg5} />
+                    <img value="4" src={bg_projects} />
                 </div>
                 <div class='bg-projects '>
                 </div>
@@ -106,7 +109,7 @@ function Projects() {
                 <div class='page-projects row' >
 
 
-                    <div class='title mt-0' data-aos="fade-left" data-aos-duration="1000"><span>PROJECTS</span></div>
+                    <div class='title mt-0' data-aos="fade-left" data-aos-duration="1000"><span style={{color: theme == false ? 'white' : 'black'}}>PROJECTS</span></div>
 
                     <div class='carousel-vergs d-flex-justify-content-center mt-2' data-aos="fade-right" data-aos-duration="1000" data-aos-delay="2000" >
                         <div class='row d-flex justify-content-center'>
@@ -115,7 +118,7 @@ function Projects() {
 
 
                             <div class="slider-card col-12 d-flex justify-content-center ">
-                                <div class="box row justify-content-center">
+                                <div class="box row justify-content-center" style={borderBox}>
                                     <p class={projeto == 1 ? 'vergs-tattoo carousel-titles' : projeto == 2 ? 'thiago-adv carousel-titles' : 'hermes-project carousel-titles'}>
 
                                         <Icon icon="bxs:left-arrow"

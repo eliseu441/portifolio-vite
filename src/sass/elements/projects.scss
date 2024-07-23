@@ -66,7 +66,7 @@
     .vergs-tattoo {
         font-size: 30px;
         background: rgb(174 118 34);
-        background: linear-gradient(164deg, rgb(187 187 187) 40%, rgb(230 0 255) 48%, rgb(151 151 151) 57%);
+        background: linear-gradient(164deg, rgb(217, 217, 217) 40%, rgb(230 0 255) 48%, rgb(203, 203, 203) 57%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -184,8 +184,8 @@
         margin-left: 5px;
         width: 60vw;
         padding: 10px;
-        background-color: rgba(0, 0, 0, 0.6);
-        border: 1px solid rgb(217 61 0 / 45.4%);
+        background-color: rgba(0, 0, 0, 0.5);
+        
         backdrop-filter: blur(4px);
         border-radius: .7rem;
         transition: all ease .3s;
