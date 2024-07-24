@@ -118,7 +118,7 @@ const colunas = [
         "id": 16,
         "name": "csv-reader",
         "languages": "typescript",
-        "data": "13-10-2022"
+        "data": "2022"
     },
     {
         "link":'https://github.com/eliseu441/hefesto-next',

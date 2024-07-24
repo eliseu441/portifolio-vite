@@ -29,22 +29,24 @@
     font-size: 3rem;
 }
 
-.table-striped thead tr th{
+.custom-table thead tr th{
     background: rgb(65 65 65 / 0%);
   
 }
-.table-striped thead tr th:last-child {
+.custom-table thead tr th:last-child {
     border-top-right-radius: 10px!important;
     /* Estilos para o último elemento filho da classe .table-repos */
 }
-.table-striped thead tr th:first-child {
+.custom-table thead tr th:first-child {
     border-top-left-radius: 10px!important;
     /* Estilos para o último elemento filho da classe .table-repos */
 }
  .custom-table  {
     padding: 609px!important;
  }
-
+ .up-sort {
+    transform: rotate(180deg)!important;
+ }  
 .page-link{
     background-color: rgb(75, 75, 75)!important;
     border-color: rgb(61 61 61)!important;

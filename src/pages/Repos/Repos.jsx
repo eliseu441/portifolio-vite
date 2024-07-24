@@ -14,21 +14,49 @@ function Repos() {
     const [filteredData, setFilteredData] = useState(colunas);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(5);
+    const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
     const { language, theme } = useLanguage();
-
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+    let items = [];
     useEffect(() => {
         const results = colunas.filter(row =>
             Object.values(row).some(val => val.toString().toLowerCase().includes(searchTerm.toLowerCase()))
         );
         setFilteredData(results);
     }, [searchTerm, colunas]);
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+    const getComparator = (sortConfig) => {
+        if (!sortConfig) {
+            return (a, b) => 0; // Nenhuma ordenação se sortConfig não estiver definido
+        }
+        return (a, b) => {
+            if (a[sortConfig.key] < b[sortConfig.key]) {
+                return sortConfig.direction === 'ascending' ? -1 : 1;
+            }
+            if (a[sortConfig.key] > b[sortConfig.key]) {
+                return sortConfig.direction === 'ascending' ? 1 : -1;
+            }
+            return 0;
+        };
+    };
+    const sortedItems = React.useMemo(() => {
+        // não usar .sort para grande volume de dados
+        // chamando a function getComparator diretamente evita a criação de uma nova function a cada render
+        const comparator = getComparator(sortConfig);
+        const sortableItems = [...currentItems].sort(comparator);
+        return sortableItems;
+    }, [currentItems, sortConfig]);
+    const requestSort = (key) => {
+        let direction = 'ascending';
+        if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+            direction = 'descending';
+        }
+        setSortConfig({ key, direction });
+    };
 
-    let items = [];
     for (let number = 1; number <= totalPages; number++) {
         items.push(
             <Pagination.Item key={number} active={number === currentPage} onClick={() => setCurrentPage(number)}>
@@ -38,9 +66,11 @@ function Repos() {
     }
     const fontColor = theme == false ? {
         color: "white",
+        transition:'all 0.5s',
         background: 'linear-gradient(0deg, rgb(91, 83, 110, 0.4) 50%, rgb(42, 36, 56, 0.3) 100%)'
     } : {
         color: "white",
+        transition:'all 0.5s',
         background: 'linear-gradient(0deg, rgb(44, 44, 44, 0.8) 30%, rgb(75, 75, 75, 0.7) 100%)'
     };
 
@@ -75,13 +105,22 @@ function Repos() {
                                 <thead>
                                     <tr>
                                         <th style={fontColor} className='d-flex justify-content-center'>REPO</th>
-                                        <th style={fontColor}>NAME</th>
-                                        <th style={fontColor}>LANGUAGES/FRAMEWORKS</th>
-                                        <th style={fontColor}>START_YEAR</th>
+                                        <th style={fontColor} onClick={() => requestSort('name')}>
+                                            NAME
+                                            {sortConfig.key === 'name' ? <small >{sortConfig.direction === 'ascending' ? ' ↓' : ' ↑'}</small> : null}
+                                            </th>
+                                        <th style={fontColor} onClick={() => requestSort('languages')}>
+                                            LANGUAGES/FRAMEWORKS
+                                            {sortConfig.key === 'languages' ? <small >{sortConfig.direction === 'ascending' ? ' ↓' : ' ↑'}</small> : null}
+                                            </th>
+                                        <th style={fontColor} onClick={() => requestSort('data')}>
+                                            START_YEAR
+                                            {sortConfig.key === 'data' ? <small >{sortConfig.direction === 'ascending' ? ' ↓' : ' ↑'}</small> : null}
+                                            </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {currentItems.map((item) => (
+                                    {sortedItems.map((item) => (
                                         <tr key={item.id}>
                                             <td>
                                                 <Link to={`${item.link}`} target="_blank"  >
