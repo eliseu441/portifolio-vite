@@ -9,13 +9,13 @@ import colunas from './repos.js';
 
 
 function Repos() {
+    const { language, theme } = useLanguage();
 
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState(colunas);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(5);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
-    const { language, theme } = useLanguage();
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
@@ -43,11 +43,9 @@ function Repos() {
         };
     };
     const sortedItems = React.useMemo(() => {
-        // não usar .sort para grande volume de dados
-        // chamando a function getComparator diretamente evita a criação de uma nova function a cada render
         const comparator = getComparator(sortConfig);
-        const sortableItems = [...currentItems].sort(comparator);
-        return sortableItems;
+        const sortableItems = [...filteredData].sort(comparator);
+        return sortableItems.slice(indexOfFirstItem, indexOfLastItem);;
     }, [currentItems, sortConfig]);
     const requestSort = (key) => {
         let direction = 'ascending';
